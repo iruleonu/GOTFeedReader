@@ -1,0 +1,24 @@
+//
+//  GameOfThronesFeedReaderPrefixHeader.pch
+//  GameOfThronesFeedReader
+//
+//  Created by Nuno Salvador on 27/02/16.
+//  Copyright © 2016 Nuno Salvador. All rights reserved.
+//
+
+#ifndef GameOfThronesFeedReaderPrefixHeader_pch
+#define GameOfThronesFeedReaderPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import <Availability.h>
+#import "Headers.h"
+#endif
+
+
+#endif /* GameOfThronesFeedReaderPrefixHeader_pch */

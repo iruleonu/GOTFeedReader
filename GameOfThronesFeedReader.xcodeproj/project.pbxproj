@@ -1,0 +1,837 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CDECCD4C37EC4415BD17DB3 /* Pods_GameOfThronesFeedReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AF0B2D4E63BB76E8E64482 /* Pods_GameOfThronesFeedReader.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		404EB92F1C81434400639438 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB92E1C81434400639438 /* main.m */; };
+		404EB9321C81434400639438 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9311C81434400639438 /* AppDelegate.m */; };
+		404EB9381C81434400639438 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404EB9361C81434400639438 /* Main.storyboard */; };
+		404EB93A1C81434400639438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 404EB9391C81434400639438 /* Assets.xcassets */; };
+		404EB93D1C81434400639438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404EB93B1C81434400639438 /* LaunchScreen.storyboard */; };
+		404EB9481C81434400639438 /* GameOfThronesFeedReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9471C81434400639438 /* GameOfThronesFeedReaderTests.m */; };
+		404EB96B1C81457200639438 /* NSManagedObject+CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB95E1C81457200639438 /* NSManagedObject+CoreDataStack.m */; };
+		404EB96C1C81457200639438 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9601C81457200639438 /* NSArray+Extensions.m */; };
+		404EB96D1C81457200639438 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9621C81457200639438 /* UIColor+HexString.m */; };
+		404EB96E1C81457200639438 /* UIColor+GameOfThronesFeedReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9641C81457200639438 /* UIColor+GameOfThronesFeedReader.m */; };
+		404EB96F1C81457200639438 /* MTLModel+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9661C81457200639438 /* MTLModel+Extensions.m */; };
+		404EB9701C81457200639438 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9681C81457200639438 /* NSString+Extensions.m */; };
+		404EB9711C81457200639438 /* NSObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB96A1C81457200639438 /* NSObject+Extensions.m */; };
+		404EB9761C8145DB00639438 /* LocalServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9731C8145DB00639438 /* LocalServices.m */; };
+		404EB9771C8145DB00639438 /* EntityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9751C8145DB00639438 /* EntityProvider.m */; };
+		404EB97B1C81460900639438 /* CoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB97A1C81460900639438 /* CoreDataStore.m */; };
+		404EB9821C81461B00639438 /* ApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB97D1C81461B00639438 /* ApiClient.m */; };
+		404EB9831C81461B00639438 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB97F1C81461B00639438 /* NetworkManager.m */; };
+		404EB9841C81461B00639438 /* ApiClient+Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9811C81461B00639438 /* ApiClient+Feed.m */; };
+		404EB9871C81481700639438 /* GameOfThronesFeedReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9851C81481700639438 /* GameOfThronesFeedReader.xcdatamodeld */; };
+		404EB98A1C81485F00639438 /* FeedPagedResultsMTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9891C81485F00639438 /* FeedPagedResultsMTL.m */; };
+		404EB99E1C814B0100639438 /* FeedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9991C814B0100639438 /* FeedDataSource.m */; };
+		404EB99F1C814B0100639438 /* FeedDataSource+Web.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB99B1C814B0100639438 /* FeedDataSource+Web.m */; };
+		404EB9A01C814B0100639438 /* FeedDataSource+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB99D1C814B0100639438 /* FeedDataSource+Parser.m */; };
+		404EB9A31C814ECB00639438 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9A21C814ECB00639438 /* MainViewController.m */; };
+		404EB9A71C814F4500639438 /* MainViewControllerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9A61C814F4500639438 /* MainViewControllerTableViewCell.m */; };
+		404EB9AA1C814F9200639438 /* FeedPostDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9A91C814F9200639438 /* FeedPostDetailedViewController.m */; };
+		404EB9AC1C81509F00639438 /* FeedPostDetailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404EB9AB1C81509F00639438 /* FeedPostDetailedViewController.xib */; };
+		404EB9AF1C8152B400639438 /* PostMTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9AE1C8152B400639438 /* PostMTL.m */; };
+		404EB9BF1C81572700639438 /* FeedPaginationMTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9BE1C81572700639438 /* FeedPaginationMTL.m */; };
+		404EB9C21C81592C00639438 /* PostAuthorMTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9C11C81592C00639438 /* PostAuthorMTL.m */; };
+		404EB9D41C81658B00639438 /* PostAuthorCD+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D11C81658B00639438 /* PostAuthorCD+CoreDataProperties.m */; };
+		404EB9D51C81658B00639438 /* PostAuthorCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D31C81658B00639438 /* PostAuthorCD.m */; };
+		404EB9DA1C8165A400639438 /* PostCD+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D71C8165A400639438 /* PostCD+CoreDataProperties.m */; };
+		404EB9DB1C8165A400639438 /* PostCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D91C8165A400639438 /* PostCD.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		404EB9441C81434400639438 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 404EB9221C81434300639438 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 404EB9291C81434400639438;
+			remoteInfo = GameOfThronesFeedReader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		404EB92A1C81434400639438 /* GameOfThronesFeedReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfThronesFeedReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		404EB92E1C81434400639438 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = GameOfThronesFeedReader/main.m; sourceTree = "<group>"; };
+		404EB9301C81434400639438 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		404EB9311C81434400639438 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		404EB9371C81434400639438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		404EB9391C81434400639438 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = GameOfThronesFeedReader/Assets.xcassets; sourceTree = "<group>"; };
+		404EB93C1C81434400639438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		404EB93E1C81434400639438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GameOfThronesFeedReader/Info.plist; sourceTree = "<group>"; };
+		404EB9431C81434400639438 /* GameOfThronesFeedReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfThronesFeedReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		404EB9471C81434400639438 /* GameOfThronesFeedReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfThronesFeedReaderTests.m; sourceTree = "<group>"; };
+		404EB9491C81434400639438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		404EB95D1C81457200639438 /* NSManagedObject+CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+CoreDataStack.h"; sourceTree = "<group>"; };
+		404EB95E1C81457200639438 /* NSManagedObject+CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CoreDataStack.m"; sourceTree = "<group>"; };
+		404EB95F1C81457200639438 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
+		404EB9601C81457200639438 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
+		404EB9611C81457200639438 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		404EB9621C81457200639438 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		404EB9631C81457200639438 /* UIColor+GameOfThronesFeedReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GameOfThronesFeedReader.h"; sourceTree = "<group>"; };
+		404EB9641C81457200639438 /* UIColor+GameOfThronesFeedReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GameOfThronesFeedReader.m"; sourceTree = "<group>"; };
+		404EB9651C81457200639438 /* MTLModel+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MTLModel+Extensions.h"; sourceTree = "<group>"; };
+		404EB9661C81457200639438 /* MTLModel+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MTLModel+Extensions.m"; sourceTree = "<group>"; };
+		404EB9671C81457200639438 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		404EB9681C81457200639438 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		404EB9691C81457200639438 /* NSObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extensions.h"; sourceTree = "<group>"; };
+		404EB96A1C81457200639438 /* NSObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extensions.m"; sourceTree = "<group>"; };
+		404EB9721C8145DB00639438 /* LocalServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalServices.h; sourceTree = "<group>"; };
+		404EB9731C8145DB00639438 /* LocalServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalServices.m; sourceTree = "<group>"; };
+		404EB9741C8145DB00639438 /* EntityProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityProvider.h; sourceTree = "<group>"; };
+		404EB9751C8145DB00639438 /* EntityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityProvider.m; sourceTree = "<group>"; };
+		404EB9791C81460900639438 /* CoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStore.h; sourceTree = "<group>"; };
+		404EB97A1C81460900639438 /* CoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStore.m; sourceTree = "<group>"; };
+		404EB97C1C81461B00639438 /* ApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient.h; sourceTree = "<group>"; };
+		404EB97D1C81461B00639438 /* ApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient.m; sourceTree = "<group>"; };
+		404EB97E1C81461B00639438 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		404EB97F1C81461B00639438 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		404EB9801C81461B00639438 /* ApiClient+Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ApiClient+Feed.h"; sourceTree = "<group>"; };
+		404EB9811C81461B00639438 /* ApiClient+Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ApiClient+Feed.m"; sourceTree = "<group>"; };
+		404EB9861C81481700639438 /* GameOfThronesFeedReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameOfThronesFeedReader.xcdatamodel; sourceTree = "<group>"; };
+		404EB9881C81485F00639438 /* FeedPagedResultsMTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedPagedResultsMTL.h; sourceTree = "<group>"; };
+		404EB9891C81485F00639438 /* FeedPagedResultsMTL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedPagedResultsMTL.m; sourceTree = "<group>"; };
+		404EB9941C8149C900639438 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
+		404EB9981C814B0100639438 /* FeedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedDataSource.h; sourceTree = "<group>"; };
+		404EB9991C814B0100639438 /* FeedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedDataSource.m; sourceTree = "<group>"; };
+		404EB99A1C814B0100639438 /* FeedDataSource+Web.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FeedDataSource+Web.h"; sourceTree = "<group>"; };
+		404EB99B1C814B0100639438 /* FeedDataSource+Web.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FeedDataSource+Web.m"; sourceTree = "<group>"; };
+		404EB99C1C814B0100639438 /* FeedDataSource+Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FeedDataSource+Parser.h"; sourceTree = "<group>"; };
+		404EB99D1C814B0100639438 /* FeedDataSource+Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FeedDataSource+Parser.m"; sourceTree = "<group>"; };
+		404EB9A11C814ECB00639438 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		404EB9A21C814ECB00639438 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		404EB9A51C814F4500639438 /* MainViewControllerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewControllerTableViewCell.h; sourceTree = "<group>"; };
+		404EB9A61C814F4500639438 /* MainViewControllerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewControllerTableViewCell.m; sourceTree = "<group>"; };
+		404EB9A81C814F9200639438 /* FeedPostDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedPostDetailedViewController.h; sourceTree = "<group>"; };
+		404EB9A91C814F9200639438 /* FeedPostDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedPostDetailedViewController.m; sourceTree = "<group>"; };
+		404EB9AB1C81509F00639438 /* FeedPostDetailedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedPostDetailedViewController.xib; sourceTree = "<group>"; };
+		404EB9AD1C8152B400639438 /* PostMTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostMTL.h; sourceTree = "<group>"; };
+		404EB9AE1C8152B400639438 /* PostMTL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostMTL.m; sourceTree = "<group>"; };
+		404EB9BD1C81572700639438 /* FeedPaginationMTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedPaginationMTL.h; sourceTree = "<group>"; };
+		404EB9BE1C81572700639438 /* FeedPaginationMTL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedPaginationMTL.m; sourceTree = "<group>"; };
+		404EB9C01C81592C00639438 /* PostAuthorMTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostAuthorMTL.h; sourceTree = "<group>"; };
+		404EB9C11C81592C00639438 /* PostAuthorMTL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostAuthorMTL.m; sourceTree = "<group>"; };
+		404EB9C41C8159F300639438 /* Headers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Headers.h; sourceTree = "<group>"; };
+		404EB9D01C81658B00639438 /* PostAuthorCD+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PostAuthorCD+CoreDataProperties.h"; sourceTree = "<group>"; };
+		404EB9D11C81658B00639438 /* PostAuthorCD+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PostAuthorCD+CoreDataProperties.m"; sourceTree = "<group>"; };
+		404EB9D21C81658B00639438 /* PostAuthorCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostAuthorCD.h; sourceTree = "<group>"; };
+		404EB9D31C81658B00639438 /* PostAuthorCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostAuthorCD.m; sourceTree = "<group>"; };
+		404EB9D61C8165A400639438 /* PostCD+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PostCD+CoreDataProperties.h"; sourceTree = "<group>"; };
+		404EB9D71C8165A400639438 /* PostCD+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PostCD+CoreDataProperties.m"; sourceTree = "<group>"; };
+		404EB9D81C8165A400639438 /* PostCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCD.h; sourceTree = "<group>"; };
+		404EB9D91C8165A400639438 /* PostCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCD.m; sourceTree = "<group>"; };
+		404EB9DC1C816CBD00639438 /* GameOfThronesFeedReaderPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameOfThronesFeedReaderPrefixHeader.pch; path = GameOfThronesFeedReader/GameOfThronesFeedReaderPrefixHeader.pch; sourceTree = "<group>"; };
+		4E23D26CB45A57561ABB7372 /* Pods-GameOfThronesFeedReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfThronesFeedReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameOfThronesFeedReader/Pods-GameOfThronesFeedReader.debug.xcconfig"; sourceTree = "<group>"; };
+		50AF0B2D4E63BB76E8E64482 /* Pods_GameOfThronesFeedReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOfThronesFeedReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		553117E3E824754EE6F1F39B /* Pods-GameOfThronesFeedReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfThronesFeedReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameOfThronesFeedReader/Pods-GameOfThronesFeedReader.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		404EB9271C81434400639438 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDECCD4C37EC4415BD17DB3 /* Pods_GameOfThronesFeedReader.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		404EB9401C81434400639438 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07424BB5135C0D1D4FE04CB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50AF0B2D4E63BB76E8E64482 /* Pods_GameOfThronesFeedReader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		404EB9211C81434300639438 = {
+			isa = PBXGroup;
+			children = (
+				404EB92C1C81434400639438 /* GameOfThronesFeedReader */,
+				404EB9461C81434400639438 /* GameOfThronesFeedReaderTests */,
+				07424BB5135C0D1D4FE04CB5 /* Frameworks */,
+				404EB9521C81448600639438 /* Other */,
+				FD7676F3ABC97352CAF35164 /* Pods */,
+				404EB92B1C81434400639438 /* Products */,
+				404EB9531C81449C00639438 /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		404EB92B1C81434400639438 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				404EB92A1C81434400639438 /* GameOfThronesFeedReader.app */,
+				404EB9431C81434400639438 /* GameOfThronesFeedReaderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		404EB92C1C81434400639438 /* GameOfThronesFeedReader */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9951C814A0500639438 /* AppDelegate */,
+				404EB9911C8149B000639438 /* Common */,
+				404EB9921C8149BC00639438 /* Configuration */,
+				404EB9931C8149C100639438 /* VCs */,
+			);
+			path = GameOfThronesFeedReader;
+			sourceTree = "<group>";
+		};
+		404EB9461C81434400639438 /* GameOfThronesFeedReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9471C81434400639438 /* GameOfThronesFeedReaderTests.m */,
+				404EB9491C81434400639438 /* Info.plist */,
+			);
+			path = GameOfThronesFeedReaderTests;
+			sourceTree = "<group>";
+		};
+		404EB9521C81448600639438 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9DC1C816CBD00639438 /* GameOfThronesFeedReaderPrefixHeader.pch */,
+				404EB93E1C81434400639438 /* Info.plist */,
+				404EB92E1C81434400639438 /* main.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		404EB9531C81449C00639438 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9551C8144E600639438 /* Fonts */,
+				404EB9541C8144DF00639438 /* Storyboard */,
+				404EB93B1C81434400639438 /* LaunchScreen.storyboard */,
+				404EB9391C81434400639438 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		404EB9541C8144DF00639438 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9361C81434400639438 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		404EB9551C8144E600639438 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		404EB9561C81453400639438 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9981C814B0100639438 /* FeedDataSource.h */,
+				404EB9991C814B0100639438 /* FeedDataSource.m */,
+				404EB99A1C814B0100639438 /* FeedDataSource+Web.h */,
+				404EB99B1C814B0100639438 /* FeedDataSource+Web.m */,
+				404EB99C1C814B0100639438 /* FeedDataSource+Parser.h */,
+				404EB99D1C814B0100639438 /* FeedDataSource+Parser.m */,
+			);
+			name = DataSources;
+			sourceTree = "<group>";
+		};
+		404EB9571C81453A00639438 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		404EB9581C81454000639438 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				404EB95D1C81457200639438 /* NSManagedObject+CoreDataStack.h */,
+				404EB95E1C81457200639438 /* NSManagedObject+CoreDataStack.m */,
+				404EB95F1C81457200639438 /* NSArray+Extensions.h */,
+				404EB9601C81457200639438 /* NSArray+Extensions.m */,
+				404EB9611C81457200639438 /* UIColor+HexString.h */,
+				404EB9621C81457200639438 /* UIColor+HexString.m */,
+				404EB9631C81457200639438 /* UIColor+GameOfThronesFeedReader.h */,
+				404EB9641C81457200639438 /* UIColor+GameOfThronesFeedReader.m */,
+				404EB9651C81457200639438 /* MTLModel+Extensions.h */,
+				404EB9661C81457200639438 /* MTLModel+Extensions.m */,
+				404EB9671C81457200639438 /* NSString+Extensions.h */,
+				404EB9681C81457200639438 /* NSString+Extensions.m */,
+				404EB9691C81457200639438 /* NSObject+Extensions.h */,
+				404EB96A1C81457200639438 /* NSObject+Extensions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		404EB9591C81454600639438 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9721C8145DB00639438 /* LocalServices.h */,
+				404EB9731C8145DB00639438 /* LocalServices.m */,
+				404EB9741C8145DB00639438 /* EntityProvider.h */,
+				404EB9751C8145DB00639438 /* EntityProvider.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		404EB95A1C81454B00639438 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9BC1C81571200639438 /* ServerSideResponses */,
+				404EB95B1C81455100639438 /* Requests */,
+				404EB95C1C81455700639438 /* Store */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		404EB95B1C81455100639438 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				404EB97C1C81461B00639438 /* ApiClient.h */,
+				404EB97D1C81461B00639438 /* ApiClient.m */,
+				404EB9801C81461B00639438 /* ApiClient+Feed.h */,
+				404EB9811C81461B00639438 /* ApiClient+Feed.m */,
+				404EB97E1C81461B00639438 /* NetworkManager.h */,
+				404EB97F1C81461B00639438 /* NetworkManager.m */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		404EB95C1C81455700639438 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9781C8145F400639438 /* Entities */,
+				404EB9791C81460900639438 /* CoreDataStore.h */,
+				404EB97A1C81460900639438 /* CoreDataStore.m */,
+				404EB9851C81481700639438 /* GameOfThronesFeedReader.xcdatamodeld */,
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
+		404EB9781C8145F400639438 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9D61C8165A400639438 /* PostCD+CoreDataProperties.h */,
+				404EB9D71C8165A400639438 /* PostCD+CoreDataProperties.m */,
+				404EB9D81C8165A400639438 /* PostCD.h */,
+				404EB9D91C8165A400639438 /* PostCD.m */,
+				404EB9D01C81658B00639438 /* PostAuthorCD+CoreDataProperties.h */,
+				404EB9D11C81658B00639438 /* PostAuthorCD+CoreDataProperties.m */,
+				404EB9D21C81658B00639438 /* PostAuthorCD.h */,
+				404EB9D31C81658B00639438 /* PostAuthorCD.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		404EB9911C8149B000639438 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9581C81454000639438 /* Categories */,
+				404EB9561C81453400639438 /* DataSources */,
+				404EB95A1C81454B00639438 /* Model */,
+				404EB9591C81454600639438 /* Services */,
+				404EB9571C81453A00639438 /* Views */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		404EB9921C8149BC00639438 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9C41C8159F300639438 /* Headers.h */,
+				404EB9941C8149C900639438 /* Networking.h */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		404EB9931C8149C100639438 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9971C814A3C00639438 /* FeedPostDetailedVC */,
+				404EB9961C814A3100639438 /* MainVC */,
+			);
+			name = VCs;
+			sourceTree = "<group>";
+		};
+		404EB9951C814A0500639438 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9301C81434400639438 /* AppDelegate.h */,
+				404EB9311C81434400639438 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		404EB9961C814A3100639438 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9A41C814F3A00639438 /* Cells */,
+				404EB9A11C814ECB00639438 /* MainViewController.h */,
+				404EB9A21C814ECB00639438 /* MainViewController.m */,
+			);
+			name = MainVC;
+			sourceTree = "<group>";
+		};
+		404EB9971C814A3C00639438 /* FeedPostDetailedVC */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9A81C814F9200639438 /* FeedPostDetailedViewController.h */,
+				404EB9A91C814F9200639438 /* FeedPostDetailedViewController.m */,
+				404EB9AB1C81509F00639438 /* FeedPostDetailedViewController.xib */,
+			);
+			name = FeedPostDetailedVC;
+			sourceTree = "<group>";
+		};
+		404EB9A41C814F3A00639438 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9A51C814F4500639438 /* MainViewControllerTableViewCell.h */,
+				404EB9A61C814F4500639438 /* MainViewControllerTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		404EB9BC1C81571200639438 /* ServerSideResponses */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9881C81485F00639438 /* FeedPagedResultsMTL.h */,
+				404EB9891C81485F00639438 /* FeedPagedResultsMTL.m */,
+				404EB9BD1C81572700639438 /* FeedPaginationMTL.h */,
+				404EB9BE1C81572700639438 /* FeedPaginationMTL.m */,
+				404EB9AD1C8152B400639438 /* PostMTL.h */,
+				404EB9AE1C8152B400639438 /* PostMTL.m */,
+				404EB9C01C81592C00639438 /* PostAuthorMTL.h */,
+				404EB9C11C81592C00639438 /* PostAuthorMTL.m */,
+			);
+			name = ServerSideResponses;
+			sourceTree = "<group>";
+		};
+		FD7676F3ABC97352CAF35164 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E23D26CB45A57561ABB7372 /* Pods-GameOfThronesFeedReader.debug.xcconfig */,
+				553117E3E824754EE6F1F39B /* Pods-GameOfThronesFeedReader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		404EB9291C81434400639438 /* GameOfThronesFeedReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 404EB94C1C81434400639438 /* Build configuration list for PBXNativeTarget "GameOfThronesFeedReader" */;
+			buildPhases = (
+				1612C5F89BDC7905E56AC97E /* Check Pods Manifest.lock */,
+				404EB9261C81434400639438 /* Sources */,
+				404EB9271C81434400639438 /* Frameworks */,
+				404EB9281C81434400639438 /* Resources */,
+				425587C939231EDAAA73D0ED /* Embed Pods Frameworks */,
+				3A454DC5539F03983087B240 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GameOfThronesFeedReader;
+			productName = GameOfThronesFeedReader;
+			productReference = 404EB92A1C81434400639438 /* GameOfThronesFeedReader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		404EB9421C81434400639438 /* GameOfThronesFeedReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 404EB94F1C81434400639438 /* Build configuration list for PBXNativeTarget "GameOfThronesFeedReaderTests" */;
+			buildPhases = (
+				404EB93F1C81434400639438 /* Sources */,
+				404EB9401C81434400639438 /* Frameworks */,
+				404EB9411C81434400639438 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				404EB9451C81434400639438 /* PBXTargetDependency */,
+			);
+			name = GameOfThronesFeedReaderTests;
+			productName = GameOfThronesFeedReaderTests;
+			productReference = 404EB9431C81434400639438 /* GameOfThronesFeedReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		404EB9221C81434300639438 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Nuno Salvador";
+				TargetAttributes = {
+					404EB9291C81434400639438 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					404EB9421C81434400639438 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 404EB9291C81434400639438;
+					};
+				};
+			};
+			buildConfigurationList = 404EB9251C81434300639438 /* Build configuration list for PBXProject "GameOfThronesFeedReader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 404EB9211C81434300639438;
+			productRefGroup = 404EB92B1C81434400639438 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				404EB9291C81434400639438 /* GameOfThronesFeedReader */,
+				404EB9421C81434400639438 /* GameOfThronesFeedReaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		404EB9281C81434400639438 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				404EB9AC1C81509F00639438 /* FeedPostDetailedViewController.xib in Resources */,
+				404EB93D1C81434400639438 /* LaunchScreen.storyboard in Resources */,
+				404EB93A1C81434400639438 /* Assets.xcassets in Resources */,
+				404EB9381C81434400639438 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		404EB9411C81434400639438 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1612C5F89BDC7905E56AC97E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3A454DC5539F03983087B240 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameOfThronesFeedReader/Pods-GameOfThronesFeedReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		425587C939231EDAAA73D0ED /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameOfThronesFeedReader/Pods-GameOfThronesFeedReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		404EB9261C81434400639438 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				404EB96D1C81457200639438 /* UIColor+HexString.m in Sources */,
+				404EB96F1C81457200639438 /* MTLModel+Extensions.m in Sources */,
+				404EB9841C81461B00639438 /* ApiClient+Feed.m in Sources */,
+				404EB9AF1C8152B400639438 /* PostMTL.m in Sources */,
+				404EB9771C8145DB00639438 /* EntityProvider.m in Sources */,
+				404EB9701C81457200639438 /* NSString+Extensions.m in Sources */,
+				404EB9321C81434400639438 /* AppDelegate.m in Sources */,
+				404EB97B1C81460900639438 /* CoreDataStore.m in Sources */,
+				404EB9A71C814F4500639438 /* MainViewControllerTableViewCell.m in Sources */,
+				404EB9D51C81658B00639438 /* PostAuthorCD.m in Sources */,
+				404EB99F1C814B0100639438 /* FeedDataSource+Web.m in Sources */,
+				404EB9BF1C81572700639438 /* FeedPaginationMTL.m in Sources */,
+				404EB92F1C81434400639438 /* main.m in Sources */,
+				404EB96C1C81457200639438 /* NSArray+Extensions.m in Sources */,
+				404EB96B1C81457200639438 /* NSManagedObject+CoreDataStack.m in Sources */,
+				404EB96E1C81457200639438 /* UIColor+GameOfThronesFeedReader.m in Sources */,
+				404EB9871C81481700639438 /* GameOfThronesFeedReader.xcdatamodeld in Sources */,
+				404EB9DA1C8165A400639438 /* PostCD+CoreDataProperties.m in Sources */,
+				404EB9D41C81658B00639438 /* PostAuthorCD+CoreDataProperties.m in Sources */,
+				404EB9761C8145DB00639438 /* LocalServices.m in Sources */,
+				404EB9711C81457200639438 /* NSObject+Extensions.m in Sources */,
+				404EB9A01C814B0100639438 /* FeedDataSource+Parser.m in Sources */,
+				404EB9DB1C8165A400639438 /* PostCD.m in Sources */,
+				404EB9A31C814ECB00639438 /* MainViewController.m in Sources */,
+				404EB9831C81461B00639438 /* NetworkManager.m in Sources */,
+				404EB9AA1C814F9200639438 /* FeedPostDetailedViewController.m in Sources */,
+				404EB9C21C81592C00639438 /* PostAuthorMTL.m in Sources */,
+				404EB98A1C81485F00639438 /* FeedPagedResultsMTL.m in Sources */,
+				404EB9821C81461B00639438 /* ApiClient.m in Sources */,
+				404EB99E1C814B0100639438 /* FeedDataSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		404EB93F1C81434400639438 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				404EB9481C81434400639438 /* GameOfThronesFeedReaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		404EB9451C81434400639438 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 404EB9291C81434400639438 /* GameOfThronesFeedReader */;
+			targetProxy = 404EB9441C81434400639438 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		404EB9361C81434400639438 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				404EB9371C81434400639438 /* Base */,
+			);
+			name = Main.storyboard;
+			path = GameOfThronesFeedReader;
+			sourceTree = "<group>";
+		};
+		404EB93B1C81434400639438 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				404EB93C1C81434400639438 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = GameOfThronesFeedReader;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		404EB94A1C81434400639438 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		404EB94B1C81434400639438 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		404EB94D1C81434400639438 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E23D26CB45A57561ABB7372 /* Pods-GameOfThronesFeedReader.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/GameOfThronesFeedReaderPrefixHeader.pch";
+				INFOPLIST_FILE = GameOfThronesFeedReader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iruleonu.GameOfThronesFeedReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		404EB94E1C81434400639438 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 553117E3E824754EE6F1F39B /* Pods-GameOfThronesFeedReader.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/GameOfThronesFeedReaderPrefixHeader.pch";
+				INFOPLIST_FILE = GameOfThronesFeedReader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iruleonu.GameOfThronesFeedReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		404EB9501C81434400639438 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GameOfThronesFeedReaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iruleonu.GameOfThronesFeedReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameOfThronesFeedReader.app/GameOfThronesFeedReader";
+			};
+			name = Debug;
+		};
+		404EB9511C81434400639438 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GameOfThronesFeedReaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iruleonu.GameOfThronesFeedReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameOfThronesFeedReader.app/GameOfThronesFeedReader";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		404EB9251C81434300639438 /* Build configuration list for PBXProject "GameOfThronesFeedReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				404EB94A1C81434400639438 /* Debug */,
+				404EB94B1C81434400639438 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		404EB94C1C81434400639438 /* Build configuration list for PBXNativeTarget "GameOfThronesFeedReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				404EB94D1C81434400639438 /* Debug */,
+				404EB94E1C81434400639438 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		404EB94F1C81434400639438 /* Build configuration list for PBXNativeTarget "GameOfThronesFeedReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				404EB9501C81434400639438 /* Debug */,
+				404EB9511C81434400639438 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		404EB9851C81481700639438 /* GameOfThronesFeedReader.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				404EB9861C81481700639438 /* GameOfThronesFeedReader.xcdatamodel */,
+			);
+			currentVersion = 404EB9861C81481700639438 /* GameOfThronesFeedReader.xcdatamodel */;
+			path = GameOfThronesFeedReader.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 404EB9221C81434300639438 /* Project object */;
+}
