@@ -95,7 +95,6 @@
         
         // Update or create a new managed object
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uuid == %@", [obj uuid]];
-        
         [NSManagedObject fetchWithPredicate:predicate inManagedObjectContext:bmoc asynchronous:NO entityName:NSStringFromClass([obj CDCompanionClass]) completionBlock:^(NSArray *results) {
             mo = [results firstObject];
         }];
@@ -107,8 +106,20 @@
             // Do the same for each relationship recursivly
             for (NSString *relationship in [obj CDCompanionClassRelationshipPropertyNames]) {
                 SEL selector = NSSelectorFromString(relationship);
-                NSObject *mantleProperty = ((NSObject *(*)(id, SEL))[obj methodForSelector:selector])(obj, selector);
-                [self persistEntityFromPostMTLArray:@[mantleProperty] withSaveCompletionBlock:nil];
+                MTLModel<MantleToCoreDataProtocol> *mantleProperty = ((MTLModel<MantleToCoreDataProtocol> *(*)(id, SEL))[obj methodForSelector:selector])(obj, selector);
+                
+                // Call recursivly and set the relationship in the completion block
+                [self persistEntityFromPostMTLArray:@[mantleProperty] withSaveCompletionBlock:^(BOOL saved, NSError *error) {
+                    NSPredicate *predicateForTheRelationship = [NSPredicate predicateWithFormat:@"uuid == %@", [mantleProperty uuid]];
+                    [NSManagedObject fetchWithPredicate:predicateForTheRelationship
+                                 inManagedObjectContext:bmoc
+                                           asynchronous:NO
+                                             entityName:NSStringFromClass([mantleProperty CDCompanionClass])
+                                        completionBlock:^(NSArray *results) {
+                                            NSManagedObject *moRelationship = [results firstObject];
+                                            [mo setValue:moRelationship forKey:relationship];
+                    }];
+                }];
             }
         }
         else {
@@ -123,8 +134,20 @@
             // Do the same for each relationship recursivly
             for (NSString *relationship in [obj CDCompanionClassRelationshipPropertyNames]) {
                 SEL selector = NSSelectorFromString(relationship);
-                NSObject *mantleProperty = ((NSObject *(*)(id, SEL))[obj methodForSelector:selector])(obj, selector);
-                [self persistEntityFromPostMTLArray:@[mantleProperty] withSaveCompletionBlock:nil];
+                MTLModel<MantleToCoreDataProtocol> *mantleProperty = ((MTLModel<MantleToCoreDataProtocol> *(*)(id, SEL))[obj methodForSelector:selector])(obj, selector);
+                
+                // Call recursivly and set the relationship in the completion block
+                [self persistEntityFromPostMTLArray:@[mantleProperty] withSaveCompletionBlock:^(BOOL saved, NSError *error) {
+                    NSPredicate *predicateForTheRelationship = [NSPredicate predicateWithFormat:@"uuid == %@", [mantleProperty uuid]];
+                    [NSManagedObject fetchWithPredicate:predicateForTheRelationship
+                                 inManagedObjectContext:bmoc
+                                           asynchronous:NO
+                                             entityName:NSStringFromClass([mantleProperty CDCompanionClass])
+                                        completionBlock:^(NSArray *results) {
+                                            NSManagedObject *moRelationship = [results firstObject];
+                                            [mo setValue:moRelationship forKey:relationship];
+                                        }];
+                }];
             }
         }
     }];

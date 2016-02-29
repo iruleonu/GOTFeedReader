@@ -18,12 +18,9 @@ static NSString * const FeedPostDetailedViewControllerEmptyPlaceholder = @"place
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
-@property (weak, nonatomic) IBOutlet UILabel *fullNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-@property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
-@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *createdAt;
-@property (weak, nonatomic) IBOutlet UILabel *updatedAt;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
+@property (weak, nonatomic) IBOutlet UILabel *tagsLabel;
 
 @end
 
@@ -31,6 +28,8 @@ static NSString * const FeedPostDetailedViewControllerEmptyPlaceholder = @"place
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -55,15 +54,17 @@ static NSString * const FeedPostDetailedViewControllerEmptyPlaceholder = @"place
 
 - (void)updateWithPost:(PostCD *)post {
     if (post) {
-//        self.fullNameLabel.text = [NSString stringWithFormat:@"%@ %@", [contact firstName], [contact surname]];
-//        self.addressLabel.text = [NSString stringWithFormat:@"%@", [contact address]];
-//        self.emailLabel.text = [NSString stringWithFormat:@"%@", [contact email]];
-//        self.phoneNumberLabel.text = [NSString stringWithFormat:@"%@", [contact phoneNumber]];
-//        self.createdAt.text = [NSString stringWithFormat:@"%@", [contact createdAt]];
-//        self.updatedAt.text = [NSString stringWithFormat:@"%@", [contact updatedAt]];
+        self.titleLabel.text = [post title];
+        self.bodyTextView.text = [[[post body] stringByStrippingHTML] trim];
+        
+        NSMutableString *tags = [NSMutableString string];
+        for (NSString *tag in [post tags]) {
+            [tags appendString:[NSString stringWithFormat:@" %@", tag]];
+        }
+        self.tagsLabel.text = tags;
         
         // Do the request using AFNetworking category on top of the UIImageView
-        NSString *avatarImage = [post.author getAuthorAvatar];
+        NSString *avatarImage = [post getPostAvatar];
         [self.avatarImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:avatarImage]]
                                     placeholderImage:[UIImage imageNamed:FeedPostDetailedViewControllerEmptyPlaceholder]
                                              success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
