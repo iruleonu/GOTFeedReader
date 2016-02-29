@@ -7,16 +7,16 @@
 //
 
 #import <Mantle/Mantle.h>
+#import "MantleToCoreDataProtocol.h"
 
-@interface PostAuthorMTL : MTLModel <MTLJSONSerializing>
+@interface PostAuthorMTL : MTLModel <MTLJSONSerializing, MantleToCoreDataProtocol>
 
-@property (nullable, nonatomic, retain) NSString *uuid;
+@property (nonnull, nonatomic, retain) NSString *uuid;
 @property (nullable, nonatomic, retain) NSString *email;
 @property (nullable, nonatomic, retain) NSString *displayName;
 @property (nullable, nonatomic, retain) NSString *firstName;
 @property (nullable, nonatomic, retain) NSString *lastName;
 
 - (NSString * _Nonnull)getAuthorAvatar;
-- (Class _Nonnull)coreDataCompanionClass;
 
 @end

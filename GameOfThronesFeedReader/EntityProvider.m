@@ -86,39 +86,51 @@
     }
 }
 
-- (void)persistPostsFromPostMTLArray:(NSArray *)array withSaveCompletionBlock:(CoreDataStoreSaveCompletion)savedBlock
+- (void)persistEntityFromPostMTLArray:(NSArray *)array withSaveCompletionBlock:(CoreDataStoreSaveCompletion)savedBlock
 {
     NSManagedObjectContext *bmoc = self.backgroundManagedObjectContext;
     
-    [array enumerateObjectsUsingBlock:^(PostMTL *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        __block PostCD *mo;
+    [array enumerateObjectsUsingBlock:^(MTLModel<MantleToCoreDataProtocol> *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        __block NSManagedObject *mo;
         
-        // Post without the author
-        PostMTL *auxObj = [obj copy];
-        auxObj.author = nil;
+        // Update or create a new managed object
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uuid == %@", [obj uuid]];
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uuid == %@", obj.uuid];
-        [PostCD fetchWithPredicate:predicate inManagedObjectContext:bmoc asynchronous:NO completionBlock:^(NSArray *results) {
+        [NSManagedObject fetchWithPredicate:predicate inManagedObjectContext:bmoc asynchronous:NO entityName:NSStringFromClass([obj CDCompanionClass]) completionBlock:^(NSArray *results) {
             mo = [results firstObject];
         }];
         if (!mo) {
-            mo = [[CoreDataStore instance] createEntityWithClassName:NSStringFromClass([obj coreDataCompanionClass])
-                                                attributesDictionary:[auxObj dictionaryValue]
+            mo = [[CoreDataStore instance] createEntityWithClassName:NSStringFromClass([obj CDCompanionClass])
+                                                attributesDictionary:[obj dictionaryWithoutCDRelationships]
                                               inManagedObjectContext:bmoc];
+            
+            // Do the same for each relationship recursivly
+            for (NSString *relationship in [obj CDCompanionClassRelationshipPropertyNames]) {
+                SEL selector = NSSelectorFromString(relationship);
+                NSObject *mantleProperty = ((NSObject *(*)(id, SEL))[obj methodForSelector:selector])(obj, selector);
+                [self persistEntityFromPostMTLArray:@[mantleProperty] withSaveCompletionBlock:nil];
+            }
         }
         else {
-            NSArray *attributes = [auxObj dictionaryValue].allKeys;
+            NSArray *attributes = [obj dictionaryWithoutCDRelationships].allKeys;
             [attributes enumerateObjectsUsingBlock:^(NSString *attrKey, NSUInteger idx, BOOL *stop) {
-                NSObject *valueForKey = [auxObj valueForKey:attrKey];
+                NSObject *valueForKey = [obj valueForKey:attrKey];
                 if ([valueForKey isValidObject]) {
                     [mo setValue:valueForKey forKey:attrKey];
                 }
             }];
+            
+            // Do the same for each relationship recursivly
+            for (NSString *relationship in [obj CDCompanionClassRelationshipPropertyNames]) {
+                SEL selector = NSSelectorFromString(relationship);
+                NSObject *mantleProperty = ((NSObject *(*)(id, SEL))[obj methodForSelector:selector])(obj, selector);
+                [self persistEntityFromPostMTLArray:@[mantleProperty] withSaveCompletionBlock:nil];
+            }
         }
     }];
     
     [[CoreDataStore instance] saveDataIntoContext:bmoc usingBlock:^(BOOL saved, NSError *error) {
-        if (saved) {
+        if (savedBlock) {
             savedBlock(saved, error);
         }
     }];

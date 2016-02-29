@@ -16,7 +16,9 @@
 + (void)fetchWithUUID:(NSString *)uuid inManagedObjectContext:(NSManagedObjectContext *)context asynchronous:(BOOL)asynchronous completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock;
 + (void)fetchWithPredicate:(NSPredicate *)predicate inManagedObjectContext:(NSManagedObjectContext *)context completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock;
 + (void)fetchWithPredicate:(NSPredicate *)predicate inManagedObjectContext:(NSManagedObjectContext *)context asynchronous:(BOOL)asynchronous completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock;
++ (void)fetchWithPredicate:(NSPredicate *)predicate inManagedObjectContext:(NSManagedObjectContext *)context asynchronous:(BOOL)asynchronous entityName:(NSString *)entityName completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock;
 + (void)fetchWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors inManagedObjectContext:(NSManagedObjectContext *)context completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock;
++ (void)fetchWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors inManagedObjectContext:(NSManagedObjectContext *)context entityName:(NSString *)entityName completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock;
 + (NSFetchedResultsController *)fetchAllSortedBy:(NSArray *)properties ascending:(BOOL)ascending predicate:(NSPredicate *)predicate groupBy:(NSArray *)groupBy delegate:(id)delegate;
 + (NSFetchedResultsController *)fetchAllSortedBy:(NSArray *)properties ascending:(BOOL)ascending predicate:(NSPredicate *)predicate fetchLimit:(NSUInteger)fetchLimit fetchBatchSize:(NSUInteger)batchSize groupBy:(NSArray *)groupBy delegate:(id)delegate;
 - (void)copyAttributesAndValuesTo:(NSManagedObject *)toNSManagedObject;

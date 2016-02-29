@@ -30,19 +30,25 @@
     [self fetchWithPredicate:predicate inManagedObjectContext:context asynchronous:NO completionBlock:completionBlock];
 }
 
-+ (void)fetchWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors inManagedObjectContext:(NSManagedObjectContext *)context completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock
-{
-    [self fetchWithPredicate:predicate sortDescriptors:sortDescriptors inManagedObjectContext:context asynchronous:NO completionBlock:completionBlock];
-}
-
 + (void)fetchWithPredicate:(NSPredicate *)predicate inManagedObjectContext:(NSManagedObjectContext *)context asynchronous:(BOOL)asynchronous completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock
 {
-    [self fetchWithPredicate:predicate sortDescriptors:nil inManagedObjectContext:context asynchronous:asynchronous completionBlock:completionBlock];
+    [self fetchWithPredicate:predicate inManagedObjectContext:context sortDescriptors:nil entityName:NSStringFromClass([self class]) asynchronous:asynchronous completionBlock:completionBlock];
 }
 
-+ (void)fetchWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors inManagedObjectContext:(NSManagedObjectContext *)context asynchronous:(BOOL)asynchronous completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock
++ (void)fetchWithPredicate:(NSPredicate *)predicate inManagedObjectContext:(NSManagedObjectContext *)context asynchronous:(BOOL)asynchronous entityName:(NSString *)entityName completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock
 {
-    [[CoreDataStore instance] fetchEntriesForClassName:NSStringFromClass([self class])
+    [self fetchWithPredicate:predicate inManagedObjectContext:context sortDescriptors:nil entityName:entityName asynchronous:asynchronous completionBlock:completionBlock];
+}
+
++ (void)fetchWithPredicate:(NSPredicate *)predicate inManagedObjectContext:(NSManagedObjectContext *)context sortDescriptors:(NSArray *)sortDescriptors asynchronous:(BOOL)asynchronous completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock;
+{
+    [self fetchWithPredicate:predicate inManagedObjectContext:context sortDescriptors:sortDescriptors entityName:NSStringFromClass([self class]) asynchronous:NO completionBlock:completionBlock];
+}
+
++ (void)fetchWithPredicate:(NSPredicate *)predicate inManagedObjectContext:(NSManagedObjectContext *)context sortDescriptors:(NSArray *)sortDescriptors entityName:(NSString *)entityName asynchronous:(BOOL)asynchronous completionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock
+{
+    NSString *entriesForClassName = (entityName) ? entityName : NSStringFromClass([self class]);
+    [[CoreDataStore instance] fetchEntriesForClassName:entriesForClassName
                                          withPredicate:predicate
                                        sortDescriptors:sortDescriptors
                                   managedObjectContext:context

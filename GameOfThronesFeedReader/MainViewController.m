@@ -39,7 +39,7 @@ static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCe
         MainViewController *strongSelf = weakSelf;
         if (strongSelf) {
             // Save or update to core data
-            [[EntityProvider instance] persistPostsFromPostMTLArray:products withSaveCompletionBlock:^(BOOL saved, NSError *error) {
+            [[EntityProvider instance] persistEntityFromPostMTLArray:products withSaveCompletionBlock:^(BOOL saved, NSError *error) {
                 // Fetch them
                 [[EntityProvider instance] fetchAllPostsWithCompletionBlock:^(NSArray *results) {
                     strongSelf.posts = results;

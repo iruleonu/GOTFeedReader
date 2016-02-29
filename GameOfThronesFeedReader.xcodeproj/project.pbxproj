@@ -126,6 +126,7 @@
 		404EB9D81C8165A400639438 /* PostCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCD.h; sourceTree = "<group>"; };
 		404EB9D91C8165A400639438 /* PostCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCD.m; sourceTree = "<group>"; };
 		404EB9DC1C816CBD00639438 /* GameOfThronesFeedReaderPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameOfThronesFeedReaderPrefixHeader.pch; path = GameOfThronesFeedReader/GameOfThronesFeedReaderPrefixHeader.pch; sourceTree = "<group>"; };
+		40CC229A1C83D06A00707598 /* MantleToCoreDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MantleToCoreDataProtocol.h; sourceTree = "<group>"; };
 		4E23D26CB45A57561ABB7372 /* Pods-GameOfThronesFeedReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfThronesFeedReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameOfThronesFeedReader/Pods-GameOfThronesFeedReader.debug.xcconfig"; sourceTree = "<group>"; };
 		50AF0B2D4E63BB76E8E64482 /* Pods_GameOfThronesFeedReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOfThronesFeedReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		553117E3E824754EE6F1F39B /* Pods-GameOfThronesFeedReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfThronesFeedReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameOfThronesFeedReader/Pods-GameOfThronesFeedReader.release.xcconfig"; sourceTree = "<group>"; };
@@ -340,6 +341,7 @@
 		404EB9911C8149B000639438 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				40CC22991C83D03400707598 /* Protocols */,
 				404EB9581C81454000639438 /* Categories */,
 				404EB9561C81453400639438 /* DataSources */,
 				404EB95A1C81454B00639438 /* Model */,
@@ -418,6 +420,14 @@
 				404EB9C11C81592C00639438 /* PostAuthorMTL.m */,
 			);
 			name = ServerSideResponses;
+			sourceTree = "<group>";
+		};
+		40CC22991C83D03400707598 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				40CC229A1C83D06A00707598 /* MantleToCoreDataProtocol.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		FD7676F3ABC97352CAF35164 /* Pods */ = {
