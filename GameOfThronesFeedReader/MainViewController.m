@@ -7,22 +7,21 @@
 //
 
 #import "MainViewController.h"
-#import "UIColor+GameOfThronesFeedReader.h"
-#import "ApiClient+Feed.h"
 #import "MainViewControllerTableViewCell.h"
 #import "FeedPostDetailedViewController.h"
-#import "FeedPagedResultsMTL.h"
 #import "PostCD.h"
 #import "EntityProvider.h"
 #import "FeedDataSource.h"
+#import "PostsDataSourceManager.h"
 
 static NSString *const MainViewControllerTitle = @"GOT News Reader";
 static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCellIdentifier";
 
-@interface MainViewController ()
+@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, PostsDataSourceManagerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *posts;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) PostsDataSourceManager *dataSourceManager;
 
 @end
 
@@ -31,21 +30,36 @@ static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCe
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = MainViewControllerTitle;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone; // KittenNode has its own separator
+    self.dataSourceManager = [[PostsDataSourceManager alloc] initWithDelegate:self];
     
+    [self setupUI];
+    
+    [self fetchFeed];
+}
+
+- (void)setupUI {
+    self.title = MainViewControllerTitle;
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    // Initialize the refresh control.
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor darkGrayColor];
+    self.refreshControl.tintColor = [UIColor blackColor];
+    [self.refreshControl addTarget:self action:@selector(fetchFeed) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+}
+
+#pragma mark - Network requests
+
+- (void)fetchFeed {
     __unsafe_unretained typeof(self) weakSelf = self;
-    [FeedDataSource feedWithCompletionBlock:^(NSArray *products, NSError *error) {
+    [FeedDataSource feedWithCompletionBlock:^(NSArray *items, NSError *error) {
         MainViewController *strongSelf = weakSelf;
         if (strongSelf) {
             // Save or update to core data
-            [[EntityProvider instance] persistEntityFromPostMTLArray:products withSaveCompletionBlock:^(BOOL saved, NSError *error) {
-                // Fetch them
-                [[EntityProvider instance] fetchAllPostsWithCompletionBlock:^(NSArray *results) {
-                    strongSelf.posts = results;
-                    // Reload the table view with the new contacts
-                    [strongSelf.tableView reloadData];
-                }];
+            [[EntityProvider instance] persistEntityFromPostMTLArray:items withSaveCompletionBlock:^(BOOL saved, NSError *error) {
+                [self.refreshControl endRefreshing];
             }];
         }
     }];
@@ -54,12 +68,15 @@ static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCe
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.posts count];
+    return [self.dataSourceManager numberOfRowsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MainViewControllerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MainViewControllerCellIdentifier];
-    [cell updateWithPost:self.posts[indexPath.row]];
+    
+    PostCD *post = [self.dataSourceManager modelObjectAtIndexPath:indexPath];
+    [cell updateWithPost:post];
+    
     return cell;
 }
 
@@ -69,10 +86,41 @@ static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCe
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     FeedPostDetailedViewController *vc = [[FeedPostDetailedViewController alloc] initWithNibName:NSStringFromClass([FeedPostDetailedViewController class]) bundle:nil];
-    PostCD *post = self.posts[indexPath.row];
+    PostCD *post = [self.dataSourceManager modelObjectAtIndexPath:indexPath];
     vc.postId = post.objectID;
     
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - PostsDataSourceManagerDelegate
+
+- (void)managerInsertSectionIndex:(NSUInteger)sectionIndex {
+    [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)managerDeleteSectionIndex:(NSUInteger)sectionIndex {
+    [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)managerInsertRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)managerDeleteRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)managerReloadRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)managerWillChangeContent {
+    [self.tableView beginUpdates];
+}
+
+- (void)managerDidChangeContent {
+    [self.tableView endUpdates];
 }
 
 @end
