@@ -295,6 +295,10 @@
 				404EB9BC1C81571200639438 /* ServerSideResponses */,
 				404EB95B1C81455100639438 /* Requests */,
 				404EB95C1C81455700639438 /* Store */,
+				404EB9AD1C8152B400639438 /* PostMTL.h */,
+				404EB9AE1C8152B400639438 /* PostMTL.m */,
+				404EB9C01C81592C00639438 /* PostAuthorMTL.h */,
+				404EB9C11C81592C00639438 /* PostAuthorMTL.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -414,10 +418,6 @@
 				404EB9891C81485F00639438 /* FeedPagedResultsMTL.m */,
 				404EB9BD1C81572700639438 /* FeedPaginationMTL.h */,
 				404EB9BE1C81572700639438 /* FeedPaginationMTL.m */,
-				404EB9AD1C8152B400639438 /* PostMTL.h */,
-				404EB9AE1C8152B400639438 /* PostMTL.m */,
-				404EB9C01C81592C00639438 /* PostAuthorMTL.h */,
-				404EB9C11C81592C00639438 /* PostAuthorMTL.m */,
 			);
 			name = ServerSideResponses;
 			sourceTree = "<group>";

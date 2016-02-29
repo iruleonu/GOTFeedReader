@@ -16,7 +16,7 @@
 #import "EntityProvider.h"
 #import "FeedDataSource.h"
 
-static NSString *const MainViewControllerTitle = @"Feed Reader";
+static NSString *const MainViewControllerTitle = @"GOT News Reader";
 static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCellIdentifier";
 
 @interface MainViewController ()

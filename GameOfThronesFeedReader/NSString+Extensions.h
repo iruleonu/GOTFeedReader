@@ -12,5 +12,6 @@
 
 - (NSString *)trim;
 - (BOOL)isValidString;
+- (NSString *)stringByStrippingHTML;
 
 @end

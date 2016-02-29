@@ -19,4 +19,12 @@
     return ([self isValidObject] && [self trim].length != 0);
 }
 
+- (NSString *)stringByStrippingHTML {
+    NSString *s = [self copy];
+    NSRange r;
+    while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        s = [s stringByReplacingCharactersInRange:r withString:@""];
+    return s;
+}
+
 @end

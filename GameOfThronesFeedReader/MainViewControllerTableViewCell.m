@@ -52,14 +52,16 @@ static NSString * const MainViewControllerTableViewCellEmptyPlaceholder = @"plac
 }
 
 - (void)updateWithPost:(PostCD *)post {
-    self.firstNameLabel.text = [post.author firstName];
-    self.lastNameLabel.text = [post.author lastName];
+    self.firstNameLabel.text = [post title];
+    self.lastNameLabel.text = [[post excerpt] stringByStrippingHTML];
     
     // Start animating and wait for the completion blocks to switch it off
     [self showAndStartNetworkIndicator];
     
     // Do the request using AFNetworking category on top of the UIImageView
-    NSString *avatarImage = [post.author getAuthorAvatar];
+    NSString *avatarImage = [post getPostAvatar];
+    
+    
     [self.avatarImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:avatarImage]]
                               placeholderImage:[UIImage imageNamed:MainViewControllerTableViewCellEmptyPlaceholder]
                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
@@ -70,6 +72,7 @@ static NSString * const MainViewControllerTableViewCellEmptyPlaceholder = @"plac
                                            //TODO: set a error image
                                            [self hideAndStopNetworkIndicator];
                                        }];
+    [self layoutIfNeeded];
 }
 
 @end
