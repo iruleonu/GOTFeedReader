@@ -331,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				404EB9581C81454000639438 /* Categories */,
-				404EB9561C81453400639438 /* DataSources */,
 				407D79A01CA8F8F400BACE60 /* Managers */,
 				404EB95A1C81454B00639438 /* Models */,
 				40CC22991C83D03400707598 /* Protocols */,
@@ -374,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				404EB9A41C814F3A00639438 /* Cells */,
+				404EB9561C81453400639438 /* DataSources */,
 				404EB9A11C814ECB00639438 /* MainViewController.h */,
 				404EB9A21C814ECB00639438 /* MainViewController.m */,
 				40CC229B1C84029A00707598 /* PostsDataSourceManager.h */,
