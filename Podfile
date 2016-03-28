@@ -13,6 +13,5 @@ pod 'IRCoreDataStack', :git => 'https://github.com/iruleonu/IRCoreDataStack'
 end
 
 target 'GameOfThronesFeedReaderTests' do
-
+	pod 'OCMock', '~> 2.2'
 end
-
