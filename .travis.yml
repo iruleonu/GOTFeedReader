@@ -11,6 +11,8 @@ install: echo "<3"
 env:
   - MODE=tests
   - MODE=build
+before_script:
+ - chmod +x build.sh
 script: ./build.sh $MODE
 after_success:
   - slather
