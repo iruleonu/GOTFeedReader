@@ -8,7 +8,6 @@
 
 #import "FacadeAPI.h"
 #import "EntityProvider.h"
-#import "IRCoreDataStack+Operations.h"
 
 @interface FacadeAPI ()
 
@@ -52,7 +51,7 @@ static FacadeAPI *instance = nil;
 #pragma mark - Private
 
 - (void)setupLocalServices {
-    self.coreDataStack = [[IRCoreDataStack alloc] initWithType:@"NSSQLiteStoreType"
+    self.coreDataStack = [[IRCoreDataStack alloc] initWithType:NSSQLiteStoreType
                                                  modelFilename:@"GameOfThronesFeedReader"
                                                       inBundle:[NSBundle mainBundle]];
     self.entityProvider = [[EntityProvider alloc] initWithDataProvider:self.coreDataStack];

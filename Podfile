@@ -8,6 +8,7 @@ target 'GameOfThronesFeedReader' do
 
 pod 'AFNetworking'
 pod 'Mantle'
+pod 'IRCoreDataStack', :git => 'https://github.com/iruleonu/IRCoreDataStack'
 
 end
 

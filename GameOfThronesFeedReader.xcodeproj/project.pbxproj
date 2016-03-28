@@ -41,10 +41,7 @@
 		404EB9D51C81658B00639438 /* PostAuthorCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D31C81658B00639438 /* PostAuthorCD.m */; };
 		404EB9DA1C8165A400639438 /* PostCD+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D71C8165A400639438 /* PostCD+CoreDataProperties.m */; };
 		404EB9DB1C8165A400639438 /* PostCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D91C8165A400639438 /* PostCD.m */; };
-		407D79931CA8A24F00BACE60 /* IRCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 407D79921CA8A24F00BACE60 /* IRCoreDataStack.m */; };
 		407D79991CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 407D79981CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m */; };
-		407D799C1CA8E5F800BACE60 /* IRCoreDataStack+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 407D799B1CA8E5F800BACE60 /* IRCoreDataStack+Operations.m */; };
-		407D799F1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 407D799E1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.m */; };
 		40CC229D1C84029A00707598 /* PostsDataSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CC229C1C84029A00707598 /* PostsDataSourceManager.m */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		404EB92A1C81434400639438 /* GOT Feed Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOT Feed Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		404EB92A1C81434400639438 /* GameOfThronesFeedReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfThronesFeedReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		404EB92E1C81434400639438 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = GameOfThronesFeedReader/main.m; sourceTree = "<group>"; };
 		404EB9301C81434400639438 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		404EB9311C81434400639438 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,7 +64,7 @@
 		404EB9391C81434400639438 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = GameOfThronesFeedReader/Assets.xcassets; sourceTree = "<group>"; };
 		404EB93C1C81434400639438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		404EB93E1C81434400639438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GameOfThronesFeedReader/Info.plist; sourceTree = "<group>"; };
-		404EB9431C81434400639438 /* GOT Feed Reader Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GOT Feed Reader Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		404EB9431C81434400639438 /* GameOfThronesFeedReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfThronesFeedReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		404EB9471C81434400639438 /* GameOfThronesFeedReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfThronesFeedReaderTests.m; sourceTree = "<group>"; };
 		404EB9491C81434400639438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		404EB95F1C81457200639438 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
@@ -125,14 +122,8 @@
 		404EB9D81C8165A400639438 /* PostCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCD.h; sourceTree = "<group>"; };
 		404EB9D91C8165A400639438 /* PostCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCD.m; sourceTree = "<group>"; };
 		404EB9DC1C816CBD00639438 /* GameOfThronesFeedReaderPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameOfThronesFeedReaderPrefixHeader.pch; path = GameOfThronesFeedReader/GameOfThronesFeedReaderPrefixHeader.pch; sourceTree = "<group>"; };
-		407D79911CA8A24F00BACE60 /* IRCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRCoreDataStack.h; sourceTree = "<group>"; };
-		407D79921CA8A24F00BACE60 /* IRCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRCoreDataStack.m; sourceTree = "<group>"; };
 		407D79971CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+IRCoreDataStack.h"; sourceTree = "<group>"; };
 		407D79981CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+IRCoreDataStack.m"; sourceTree = "<group>"; };
-		407D799A1CA8E5F800BACE60 /* IRCoreDataStack+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IRCoreDataStack+Operations.h"; sourceTree = "<group>"; };
-		407D799B1CA8E5F800BACE60 /* IRCoreDataStack+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IRCoreDataStack+Operations.m"; sourceTree = "<group>"; };
-		407D799D1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IRCoreDataStack+NSFecthedResultsController.h"; sourceTree = "<group>"; };
-		407D799E1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IRCoreDataStack+NSFecthedResultsController.m"; sourceTree = "<group>"; };
 		40CC229A1C83D06A00707598 /* MantleToCoreDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MantleToCoreDataProtocol.h; sourceTree = "<group>"; };
 		40CC229B1C84029A00707598 /* PostsDataSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsDataSourceManager.h; sourceTree = "<group>"; };
 		40CC229C1C84029A00707598 /* PostsDataSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsDataSourceManager.m; sourceTree = "<group>"; };
@@ -184,8 +175,8 @@
 		404EB92B1C81434400639438 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				404EB92A1C81434400639438 /* GOT Feed Reader.app */,
-				404EB9431C81434400639438 /* GOT Feed Reader Tests.xctest */,
+				404EB92A1C81434400639438 /* GameOfThronesFeedReader.app */,
+				404EB9431C81434400639438 /* GameOfThronesFeedReaderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,13 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				404EB9781C8145F400639438 /* Entities */,
-				407D79911CA8A24F00BACE60 /* IRCoreDataStack.h */,
-				407D79921CA8A24F00BACE60 /* IRCoreDataStack.m */,
 				404EB9851C81481700639438 /* GameOfThronesFeedReader.xcdatamodeld */,
-				407D799A1CA8E5F800BACE60 /* IRCoreDataStack+Operations.h */,
-				407D799B1CA8E5F800BACE60 /* IRCoreDataStack+Operations.m */,
-				407D799D1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.h */,
-				407D799E1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.m */,
 			);
 			name = Store;
 			sourceTree = "<group>";
@@ -465,9 +450,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		404EB9291C81434400639438 /* GOT Feed Reader */ = {
+		404EB9291C81434400639438 /* GameOfThronesFeedReader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 404EB94C1C81434400639438 /* Build configuration list for PBXNativeTarget "GOT Feed Reader" */;
+			buildConfigurationList = 404EB94C1C81434400639438 /* Build configuration list for PBXNativeTarget "GameOfThronesFeedReader" */;
 			buildPhases = (
 				1612C5F89BDC7905E56AC97E /* Check Pods Manifest.lock */,
 				404EB9261C81434400639438 /* Sources */,
@@ -480,14 +465,14 @@
 			);
 			dependencies = (
 			);
-			name = "GOT Feed Reader";
+			name = GameOfThronesFeedReader;
 			productName = GameOfThronesFeedReader;
-			productReference = 404EB92A1C81434400639438 /* GOT Feed Reader.app */;
+			productReference = 404EB92A1C81434400639438 /* GameOfThronesFeedReader.app */;
 			productType = "com.apple.product-type.application";
 		};
-		404EB9421C81434400639438 /* GOT Feed Reader Tests */ = {
+		404EB9421C81434400639438 /* GameOfThronesFeedReaderTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 404EB94F1C81434400639438 /* Build configuration list for PBXNativeTarget "GOT Feed Reader Tests" */;
+			buildConfigurationList = 404EB94F1C81434400639438 /* Build configuration list for PBXNativeTarget "GameOfThronesFeedReaderTests" */;
 			buildPhases = (
 				404EB93F1C81434400639438 /* Sources */,
 				404EB9401C81434400639438 /* Frameworks */,
@@ -498,9 +483,9 @@
 			dependencies = (
 				404EB9451C81434400639438 /* PBXTargetDependency */,
 			);
-			name = "GOT Feed Reader Tests";
+			name = GameOfThronesFeedReaderTests;
 			productName = GameOfThronesFeedReaderTests;
-			productReference = 404EB9431C81434400639438 /* GOT Feed Reader Tests.xctest */;
+			productReference = 404EB9431C81434400639438 /* GameOfThronesFeedReaderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -534,8 +519,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				404EB9291C81434400639438 /* GOT Feed Reader */,
-				404EB9421C81434400639438 /* GOT Feed Reader Tests */,
+				404EB9291C81434400639438 /* GameOfThronesFeedReader */,
+				404EB9421C81434400639438 /* GameOfThronesFeedReaderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -614,8 +599,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407D79931CA8A24F00BACE60 /* IRCoreDataStack.m in Sources */,
-				407D799C1CA8E5F800BACE60 /* IRCoreDataStack+Operations.m in Sources */,
 				404EB96D1C81457200639438 /* UIColor+HexString.m in Sources */,
 				404EB96F1C81457200639438 /* MTLModel+Extensions.m in Sources */,
 				404EB9841C81461B00639438 /* ApiClient+Feed.m in Sources */,
@@ -643,7 +626,6 @@
 				404EB9AA1C814F9200639438 /* FeedPostDetailedViewController.m in Sources */,
 				40CC229D1C84029A00707598 /* PostsDataSourceManager.m in Sources */,
 				404EB9C21C81592C00639438 /* PostAuthorMTL.m in Sources */,
-				407D799F1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.m in Sources */,
 				404EB98A1C81485F00639438 /* FeedPagedResultsMTL.m in Sources */,
 				404EB9821C81461B00639438 /* ApiClient.m in Sources */,
 				404EB99E1C814B0100639438 /* FeedDataSource.m in Sources */,
@@ -663,7 +645,7 @@
 /* Begin PBXTargetDependency section */
 		404EB9451C81434400639438 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 404EB9291C81434400639438 /* GOT Feed Reader */;
+			target = 404EB9291C81434400639438 /* GameOfThronesFeedReader */;
 			targetProxy = 404EB9441C81434400639438 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -838,7 +820,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		404EB94C1C81434400639438 /* Build configuration list for PBXNativeTarget "GOT Feed Reader" */ = {
+		404EB94C1C81434400639438 /* Build configuration list for PBXNativeTarget "GameOfThronesFeedReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				404EB94D1C81434400639438 /* Debug */,
@@ -847,7 +829,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		404EB94F1C81434400639438 /* Build configuration list for PBXNativeTarget "GOT Feed Reader Tests" */ = {
+		404EB94F1C81434400639438 /* Build configuration list for PBXNativeTarget "GameOfThronesFeedReaderTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				404EB9501C81434400639438 /* Debug */,
