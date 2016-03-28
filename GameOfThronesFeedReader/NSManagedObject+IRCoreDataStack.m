@@ -7,7 +7,7 @@
 //
 
 #import "NSManagedObject+IRCoreDataStack.h"
-#import "LocalServices.h"
+#import "FacadeAPI.h"
 #import "IRCoreDataStack+NSFecthedResultsController.h"
 
 @implementation NSManagedObject (IRCoreDataStack)
@@ -42,7 +42,7 @@
 
 + (void)fetchWithPredicate:(NSPredicate *)predicate inManagedObjectContext:(NSManagedObjectContext *)context sortDescriptors:(NSArray *)sortDescriptors entityName:(NSString *)entityName asynchronous:(BOOL)asynchronous completionBlock:(IRCoreDataStackFetchCompletionBlock)completionBlock {
     NSString *entriesForClassName = (entityName) ? entityName : NSStringFromClass([self class]);
-    [[LocalServices instance].coreDataStack fetchEntriesForClassName:entriesForClassName
+    [[FacadeAPI sharedInstance].coreDataStack fetchEntriesForClassName:entriesForClassName
                                                        withPredicate:predicate
                                                      sortDescriptors:sortDescriptors
                                                 managedObjectContext:context
@@ -59,7 +59,7 @@
         return [NSSortDescriptor sortDescriptorWithKey:propertyName ascending:ascending];
     }];
     
-    NSFetchedResultsController *fc = [[LocalServices instance].coreDataStack controllerWithEntitiesName:NSStringFromClass([self class])
+    NSFetchedResultsController *fc = [[FacadeAPI sharedInstance].coreDataStack controllerWithEntitiesName:NSStringFromClass([self class])
                                                                                               predicate:predicate
                                                                                         sortDescriptors:sortDescriptors
                                                                                               batchSize:batchSize

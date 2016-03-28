@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class IRCoreDataStack;
+@class IRCoreDataStack, EntityProvider;
 
-@interface LocalServices : NSObject
+@interface FacadeAPI : NSObject
 
 @property (nonatomic, strong, readonly) IRCoreDataStack *coreDataStack;
+@property (nonatomic, strong, readonly) EntityProvider *entityProvider;
 
-+ (LocalServices *)instance;
++ (FacadeAPI *)sharedInstance;
 
 - (void)cleanInternalDB;
 

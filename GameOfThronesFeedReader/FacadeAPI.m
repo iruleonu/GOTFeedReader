@@ -6,21 +6,22 @@
 //  Copyright © 2016 Nuno Salvador. All rights reserved.
 //
 
-#import "LocalServices.h"
+#import "FacadeAPI.h"
 #import "EntityProvider.h"
 #import "IRCoreDataStack+Operations.h"
 
-@interface LocalServices ()
+@interface FacadeAPI ()
 
 @property (nonatomic, strong, readwrite) IRCoreDataStack *coreDataStack;
+@property (nonatomic, strong, readwrite) EntityProvider *entityProvider;
 
 @end
 
-@implementation LocalServices
+@implementation FacadeAPI
 
-static LocalServices *instance = nil;
+static FacadeAPI *instance = nil;
 
-+ (LocalServices *)instance {
++ (FacadeAPI *)sharedInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
@@ -54,8 +55,7 @@ static LocalServices *instance = nil;
     self.coreDataStack = [[IRCoreDataStack alloc] initWithType:@"NSSQLiteStoreType"
                                                  modelFilename:@"GameOfThronesFeedReader"
                                                       inBundle:[NSBundle mainBundle]];
-    [EntityProvider instance].managedObjectContext = self.coreDataStack.managedObjectContext;
-    [EntityProvider instance].backgroundManagedObjectContext = self.coreDataStack.backgroundManagedObjectContext;
+    self.entityProvider = [[EntityProvider alloc] initWithDataProvider:self.coreDataStack];
 }
 
 #pragma mark - Custom

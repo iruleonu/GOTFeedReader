@@ -20,7 +20,7 @@
 		404EB96F1C81457200639438 /* MTLModel+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9661C81457200639438 /* MTLModel+Extensions.m */; };
 		404EB9701C81457200639438 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9681C81457200639438 /* NSString+Extensions.m */; };
 		404EB9711C81457200639438 /* NSObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB96A1C81457200639438 /* NSObject+Extensions.m */; };
-		404EB9761C8145DB00639438 /* LocalServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9731C8145DB00639438 /* LocalServices.m */; };
+		404EB9761C8145DB00639438 /* FacadeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9731C8145DB00639438 /* FacadeAPI.m */; };
 		404EB9771C8145DB00639438 /* EntityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9751C8145DB00639438 /* EntityProvider.m */; };
 		404EB9821C81461B00639438 /* ApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB97D1C81461B00639438 /* ApiClient.m */; };
 		404EB9831C81461B00639438 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB97F1C81461B00639438 /* NetworkManager.m */; };
@@ -82,8 +82,8 @@
 		404EB9681C81457200639438 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
 		404EB9691C81457200639438 /* NSObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extensions.h"; sourceTree = "<group>"; };
 		404EB96A1C81457200639438 /* NSObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extensions.m"; sourceTree = "<group>"; };
-		404EB9721C8145DB00639438 /* LocalServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalServices.h; sourceTree = "<group>"; };
-		404EB9731C8145DB00639438 /* LocalServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalServices.m; sourceTree = "<group>"; };
+		404EB9721C8145DB00639438 /* FacadeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacadeAPI.h; sourceTree = "<group>"; };
+		404EB9731C8145DB00639438 /* FacadeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacadeAPI.m; sourceTree = "<group>"; };
 		404EB9741C8145DB00639438 /* EntityProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityProvider.h; sourceTree = "<group>"; };
 		404EB9751C8145DB00639438 /* EntityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityProvider.m; sourceTree = "<group>"; };
 		404EB97C1C81461B00639438 /* ApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient.h; sourceTree = "<group>"; };
@@ -195,6 +195,8 @@
 			children = (
 				404EB9951C814A0500639438 /* AppDelegate */,
 				404EB9911C8149B000639438 /* Common */,
+				404EB9721C8145DB00639438 /* FacadeAPI.h */,
+				404EB9731C8145DB00639438 /* FacadeAPI.m */,
 				404EB9921C8149BC00639438 /* Configuration */,
 				404EB9931C8149C100639438 /* VCs */,
 			);
@@ -287,18 +289,7 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		404EB9591C81454600639438 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				404EB9721C8145DB00639438 /* LocalServices.h */,
-				404EB9731C8145DB00639438 /* LocalServices.m */,
-				404EB9741C8145DB00639438 /* EntityProvider.h */,
-				404EB9751C8145DB00639438 /* EntityProvider.m */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-		};
-		404EB95A1C81454B00639438 /* Model */ = {
+		404EB95A1C81454B00639438 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				404EB9BC1C81571200639438 /* ServerSideResponses */,
@@ -309,7 +300,7 @@
 				404EB9C01C81592C00639438 /* PostAuthorMTL.h */,
 				404EB9C11C81592C00639438 /* PostAuthorMTL.m */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		404EB95B1C81455100639438 /* Requests */ = {
@@ -319,8 +310,6 @@
 				404EB97D1C81461B00639438 /* ApiClient.m */,
 				404EB9801C81461B00639438 /* ApiClient+Feed.h */,
 				404EB9811C81461B00639438 /* ApiClient+Feed.m */,
-				404EB97E1C81461B00639438 /* NetworkManager.h */,
-				404EB97F1C81461B00639438 /* NetworkManager.m */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -358,11 +347,12 @@
 		404EB9911C8149B000639438 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				40CC22991C83D03400707598 /* Protocols */,
 				404EB9581C81454000639438 /* Categories */,
 				404EB9561C81453400639438 /* DataSources */,
-				404EB95A1C81454B00639438 /* Model */,
-				404EB9591C81454600639438 /* Services */,
+				407D79A01CA8F8F400BACE60 /* Managers */,
+				404EB95A1C81454B00639438 /* Models */,
+				40CC22991C83D03400707598 /* Protocols */,
+				407D79A11CA8F98E00BACE60 /* Providers */,
 				404EB9571C81453A00639438 /* Views */,
 			);
 			name = Common;
@@ -435,6 +425,24 @@
 				404EB9BE1C81572700639438 /* FeedPaginationMTL.m */,
 			);
 			name = ServerSideResponses;
+			sourceTree = "<group>";
+		};
+		407D79A01CA8F8F400BACE60 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				404EB97E1C81461B00639438 /* NetworkManager.h */,
+				404EB97F1C81461B00639438 /* NetworkManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		407D79A11CA8F98E00BACE60 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				404EB9741C8145DB00639438 /* EntityProvider.h */,
+				404EB9751C8145DB00639438 /* EntityProvider.m */,
+			);
+			name = Providers;
 			sourceTree = "<group>";
 		};
 		40CC22991C83D03400707598 /* Protocols */ = {
@@ -626,7 +634,7 @@
 				404EB9DA1C8165A400639438 /* PostCD+CoreDataProperties.m in Sources */,
 				407D79991CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m in Sources */,
 				404EB9D41C81658B00639438 /* PostAuthorCD+CoreDataProperties.m in Sources */,
-				404EB9761C8145DB00639438 /* LocalServices.m in Sources */,
+				404EB9761C8145DB00639438 /* FacadeAPI.m in Sources */,
 				404EB9711C81457200639438 /* NSObject+Extensions.m in Sources */,
 				404EB9A01C814B0100639438 /* FeedDataSource+Parser.m in Sources */,
 				404EB9DB1C8165A400639438 /* PostCD.m in Sources */,

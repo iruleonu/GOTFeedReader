@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LocalServices.h"
+#import "FacadeAPI.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Setup services
-    [LocalServices instance];
+    [FacadeAPI sharedInstance];
     
     return YES;
 }
@@ -42,7 +42,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [[LocalServices instance] cleanInternalDB];
+    [[FacadeAPI sharedInstance] cleanInternalDB];
 }
 
 @end

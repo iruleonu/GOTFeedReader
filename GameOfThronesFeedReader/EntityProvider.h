@@ -12,10 +12,10 @@
 
 @interface EntityProvider : NSObject
 
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong) NSManagedObjectContext *backgroundManagedObjectContext;
-
 + (EntityProvider *)instance;
+
+- (instancetype)init NS_DESIGNATED_INITIALIZER NS_UNAVAILABLE;
+- (instancetype)initWithDataProvider:(id)dataProvider NS_DESIGNATED_INITIALIZER;
 
 - (void)fetchAllPostsWithCompletionBlock:(IRCoreDataStackFetchCompletionBlock)completionBlock;
 - (void)fetchPostWithManagedObjectID:(id)objectId withCompletionBlock:(IRCoreDataStackFetchCompletionBlock)completionBlock;

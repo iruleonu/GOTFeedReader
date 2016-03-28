@@ -25,7 +25,7 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import <libkern/OSAtomic.h>
-#import "LocalServices.h"
+#import "FacadeAPI.h"
 
 static void class_swizzleSelector(Class class, SEL originalSelector, SEL newSelector) {
     Method origMethod = class_getInstanceMethod(class, originalSelector);
