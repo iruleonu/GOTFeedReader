@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class IRCoreDataStack;
+
 @interface LocalServices : NSObject
+
+@property (nonatomic, strong, readonly) IRCoreDataStack *coreDataStack;
 
 + (LocalServices *)instance;
 

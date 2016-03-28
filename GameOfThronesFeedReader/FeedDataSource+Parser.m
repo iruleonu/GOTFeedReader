@@ -10,7 +10,6 @@
 #import "FeedPagedResultsMTL.h"
 #import "PostMTL.h"
 #import "PostCD.h"
-#import "CoreDataStore.h"
 #import "EntityProvider.h"
 
 @implementation FeedDataSource (Parser)

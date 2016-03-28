@@ -14,7 +14,6 @@
 		404EB93A1C81434400639438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 404EB9391C81434400639438 /* Assets.xcassets */; };
 		404EB93D1C81434400639438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404EB93B1C81434400639438 /* LaunchScreen.storyboard */; };
 		404EB9481C81434400639438 /* GameOfThronesFeedReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9471C81434400639438 /* GameOfThronesFeedReaderTests.m */; };
-		404EB96B1C81457200639438 /* NSManagedObject+CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB95E1C81457200639438 /* NSManagedObject+CoreDataStack.m */; };
 		404EB96C1C81457200639438 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9601C81457200639438 /* NSArray+Extensions.m */; };
 		404EB96D1C81457200639438 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9621C81457200639438 /* UIColor+HexString.m */; };
 		404EB96E1C81457200639438 /* UIColor+GameOfThronesFeedReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9641C81457200639438 /* UIColor+GameOfThronesFeedReader.m */; };
@@ -23,7 +22,6 @@
 		404EB9711C81457200639438 /* NSObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB96A1C81457200639438 /* NSObject+Extensions.m */; };
 		404EB9761C8145DB00639438 /* LocalServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9731C8145DB00639438 /* LocalServices.m */; };
 		404EB9771C8145DB00639438 /* EntityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9751C8145DB00639438 /* EntityProvider.m */; };
-		404EB97B1C81460900639438 /* CoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB97A1C81460900639438 /* CoreDataStore.m */; };
 		404EB9821C81461B00639438 /* ApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB97D1C81461B00639438 /* ApiClient.m */; };
 		404EB9831C81461B00639438 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB97F1C81461B00639438 /* NetworkManager.m */; };
 		404EB9841C81461B00639438 /* ApiClient+Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9811C81461B00639438 /* ApiClient+Feed.m */; };
@@ -43,6 +41,10 @@
 		404EB9D51C81658B00639438 /* PostAuthorCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D31C81658B00639438 /* PostAuthorCD.m */; };
 		404EB9DA1C8165A400639438 /* PostCD+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D71C8165A400639438 /* PostCD+CoreDataProperties.m */; };
 		404EB9DB1C8165A400639438 /* PostCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D91C8165A400639438 /* PostCD.m */; };
+		407D79931CA8A24F00BACE60 /* IRCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 407D79921CA8A24F00BACE60 /* IRCoreDataStack.m */; };
+		407D79991CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 407D79981CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m */; };
+		407D799C1CA8E5F800BACE60 /* IRCoreDataStack+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 407D799B1CA8E5F800BACE60 /* IRCoreDataStack+Operations.m */; };
+		407D799F1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 407D799E1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.m */; };
 		40CC229D1C84029A00707598 /* PostsDataSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CC229C1C84029A00707598 /* PostsDataSourceManager.m */; };
 /* End PBXBuildFile section */
 
@@ -68,8 +70,6 @@
 		404EB9431C81434400639438 /* GOT Feed Reader Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GOT Feed Reader Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		404EB9471C81434400639438 /* GameOfThronesFeedReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfThronesFeedReaderTests.m; sourceTree = "<group>"; };
 		404EB9491C81434400639438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		404EB95D1C81457200639438 /* NSManagedObject+CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+CoreDataStack.h"; sourceTree = "<group>"; };
-		404EB95E1C81457200639438 /* NSManagedObject+CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CoreDataStack.m"; sourceTree = "<group>"; };
 		404EB95F1C81457200639438 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
 		404EB9601C81457200639438 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		404EB9611C81457200639438 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -86,8 +86,6 @@
 		404EB9731C8145DB00639438 /* LocalServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalServices.m; sourceTree = "<group>"; };
 		404EB9741C8145DB00639438 /* EntityProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityProvider.h; sourceTree = "<group>"; };
 		404EB9751C8145DB00639438 /* EntityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityProvider.m; sourceTree = "<group>"; };
-		404EB9791C81460900639438 /* CoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStore.h; sourceTree = "<group>"; };
-		404EB97A1C81460900639438 /* CoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStore.m; sourceTree = "<group>"; };
 		404EB97C1C81461B00639438 /* ApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient.h; sourceTree = "<group>"; };
 		404EB97D1C81461B00639438 /* ApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient.m; sourceTree = "<group>"; };
 		404EB97E1C81461B00639438 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -127,6 +125,14 @@
 		404EB9D81C8165A400639438 /* PostCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCD.h; sourceTree = "<group>"; };
 		404EB9D91C8165A400639438 /* PostCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCD.m; sourceTree = "<group>"; };
 		404EB9DC1C816CBD00639438 /* GameOfThronesFeedReaderPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameOfThronesFeedReaderPrefixHeader.pch; path = GameOfThronesFeedReader/GameOfThronesFeedReaderPrefixHeader.pch; sourceTree = "<group>"; };
+		407D79911CA8A24F00BACE60 /* IRCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRCoreDataStack.h; sourceTree = "<group>"; };
+		407D79921CA8A24F00BACE60 /* IRCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRCoreDataStack.m; sourceTree = "<group>"; };
+		407D79971CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+IRCoreDataStack.h"; sourceTree = "<group>"; };
+		407D79981CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+IRCoreDataStack.m"; sourceTree = "<group>"; };
+		407D799A1CA8E5F800BACE60 /* IRCoreDataStack+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IRCoreDataStack+Operations.h"; sourceTree = "<group>"; };
+		407D799B1CA8E5F800BACE60 /* IRCoreDataStack+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IRCoreDataStack+Operations.m"; sourceTree = "<group>"; };
+		407D799D1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IRCoreDataStack+NSFecthedResultsController.h"; sourceTree = "<group>"; };
+		407D799E1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IRCoreDataStack+NSFecthedResultsController.m"; sourceTree = "<group>"; };
 		40CC229A1C83D06A00707598 /* MantleToCoreDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MantleToCoreDataProtocol.h; sourceTree = "<group>"; };
 		40CC229B1C84029A00707598 /* PostsDataSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsDataSourceManager.h; sourceTree = "<group>"; };
 		40CC229C1C84029A00707598 /* PostsDataSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsDataSourceManager.m; sourceTree = "<group>"; };
@@ -263,8 +269,8 @@
 		404EB9581C81454000639438 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				404EB95D1C81457200639438 /* NSManagedObject+CoreDataStack.h */,
-				404EB95E1C81457200639438 /* NSManagedObject+CoreDataStack.m */,
+				407D79971CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.h */,
+				407D79981CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m */,
 				404EB95F1C81457200639438 /* NSArray+Extensions.h */,
 				404EB9601C81457200639438 /* NSArray+Extensions.m */,
 				404EB9611C81457200639438 /* UIColor+HexString.h */,
@@ -323,9 +329,13 @@
 			isa = PBXGroup;
 			children = (
 				404EB9781C8145F400639438 /* Entities */,
-				404EB9791C81460900639438 /* CoreDataStore.h */,
-				404EB97A1C81460900639438 /* CoreDataStore.m */,
+				407D79911CA8A24F00BACE60 /* IRCoreDataStack.h */,
+				407D79921CA8A24F00BACE60 /* IRCoreDataStack.m */,
 				404EB9851C81481700639438 /* GameOfThronesFeedReader.xcdatamodeld */,
+				407D799A1CA8E5F800BACE60 /* IRCoreDataStack+Operations.h */,
+				407D799B1CA8E5F800BACE60 /* IRCoreDataStack+Operations.m */,
+				407D799D1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.h */,
+				407D799E1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.m */,
 			);
 			name = Store;
 			sourceTree = "<group>";
@@ -596,6 +606,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407D79931CA8A24F00BACE60 /* IRCoreDataStack.m in Sources */,
+				407D799C1CA8E5F800BACE60 /* IRCoreDataStack+Operations.m in Sources */,
 				404EB96D1C81457200639438 /* UIColor+HexString.m in Sources */,
 				404EB96F1C81457200639438 /* MTLModel+Extensions.m in Sources */,
 				404EB9841C81461B00639438 /* ApiClient+Feed.m in Sources */,
@@ -603,17 +615,16 @@
 				404EB9771C8145DB00639438 /* EntityProvider.m in Sources */,
 				404EB9701C81457200639438 /* NSString+Extensions.m in Sources */,
 				404EB9321C81434400639438 /* AppDelegate.m in Sources */,
-				404EB97B1C81460900639438 /* CoreDataStore.m in Sources */,
 				404EB9A71C814F4500639438 /* MainViewControllerTableViewCell.m in Sources */,
 				404EB9D51C81658B00639438 /* PostAuthorCD.m in Sources */,
 				404EB99F1C814B0100639438 /* FeedDataSource+Web.m in Sources */,
 				404EB9BF1C81572700639438 /* FeedPaginationMTL.m in Sources */,
 				404EB92F1C81434400639438 /* main.m in Sources */,
 				404EB96C1C81457200639438 /* NSArray+Extensions.m in Sources */,
-				404EB96B1C81457200639438 /* NSManagedObject+CoreDataStack.m in Sources */,
 				404EB96E1C81457200639438 /* UIColor+GameOfThronesFeedReader.m in Sources */,
 				404EB9871C81481700639438 /* GameOfThronesFeedReader.xcdatamodeld in Sources */,
 				404EB9DA1C8165A400639438 /* PostCD+CoreDataProperties.m in Sources */,
+				407D79991CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m in Sources */,
 				404EB9D41C81658B00639438 /* PostAuthorCD+CoreDataProperties.m in Sources */,
 				404EB9761C8145DB00639438 /* LocalServices.m in Sources */,
 				404EB9711C81457200639438 /* NSObject+Extensions.m in Sources */,
@@ -624,6 +635,7 @@
 				404EB9AA1C814F9200639438 /* FeedPostDetailedViewController.m in Sources */,
 				40CC229D1C84029A00707598 /* PostsDataSourceManager.m in Sources */,
 				404EB9C21C81592C00639438 /* PostAuthorMTL.m in Sources */,
+				407D799F1CA8E63A00BACE60 /* IRCoreDataStack+NSFecthedResultsController.m in Sources */,
 				404EB98A1C81485F00639438 /* FeedPagedResultsMTL.m in Sources */,
 				404EB9821C81461B00639438 /* ApiClient.m in Sources */,
 				404EB99E1C814B0100639438 /* FeedDataSource.m in Sources */,
@@ -760,6 +772,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/GameOfThronesFeedReaderPrefixHeader.pch";
 				INFOPLIST_FILE = GameOfThronesFeedReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iruleonu.GameOfThronesFeedReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -774,6 +787,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/GameOfThronesFeedReaderPrefixHeader.pch";
 				INFOPLIST_FILE = GameOfThronesFeedReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iruleonu.GameOfThronesFeedReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";

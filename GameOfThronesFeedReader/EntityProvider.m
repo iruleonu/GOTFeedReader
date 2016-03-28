@@ -7,10 +7,12 @@
 //
 
 #import "EntityProvider.h"
-#import "CoreDataStore.h"
-#import "NSManagedObject+CoreDataStack.h"
+#import "LocalServices.h"
+#import "NSManagedObject+IRCoreDataStack.h"
 #import "PostMTL.h"
 #import "PostCD.h"
+#import "IRCoreDataStack+Operations.h"
+#import "IRCoreDataStack+NSFecthedResultsController.h"
 
 @interface EntityProvider ()
 
@@ -35,46 +37,18 @@
 - (id)init
 {
     if (self = [super init]) {
-        [self registerForCoreDataNotifications];
+        
     }
     return self;
 }
 
-- (void)registerForCoreDataNotifications {
-    // Watch for background managed object context notifications
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification
-                                                      object:nil
-                                                       queue:nil
-                                                  usingBlock:^(NSNotification *notification) {
-                                                      NSManagedObjectContext *moc = self.managedObjectContext;
-                                                      if (notification.object != moc) {
-                                                          [moc performBlock:^(){
-                                                              [moc mergeChangesFromContextDidSaveNotification:notification];
-                                                          }];
-                                                      }
-                                                  }];
-    
-    // Remove notifications
-    [[NSNotificationCenter defaultCenter] addObserverForName:CoreDataStorePurgeUserDataNotification
-                                                      object:nil
-                                                       queue:nil
-                                                  usingBlock:^(NSNotification *notification) {
-                                                      [[NSNotificationCenter defaultCenter] removeObserver:self];
-                                                  }];
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 #pragma mark - Custom 
 
-- (void)fetchAllPostsWithCompletionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock {
+- (void)fetchAllPostsWithCompletionBlock:(IRCoreDataStackFetchCompletionBlock)completionBlock {
     [PostCD fetchWithPredicate:nil inManagedObjectContext:self.managedObjectContext asynchronous:NO completionBlock:completionBlock];
 }
 
-- (void)fetchPostWithManagedObjectID:(id)objectId withCompletionBlock:(CoreDataStoreFetchCompletionBlock)completionBlock {
+- (void)fetchPostWithManagedObjectID:(id)objectId withCompletionBlock:(IRCoreDataStackFetchCompletionBlock)completionBlock {
     NSArray *aux;
     NSError *error;
     
@@ -86,7 +60,7 @@
     }
 }
 
-- (void)persistEntityFromPostMTLArray:(NSArray *)array withSaveCompletionBlock:(CoreDataStoreSaveCompletion)savedBlock
+- (void)persistEntityFromPostMTLArray:(NSArray *)array withSaveCompletionBlock:(IRCoreDataStackSaveCompletion)savedBlock
 {
     NSManagedObjectContext *bmoc = self.backgroundManagedObjectContext;
     
@@ -99,9 +73,9 @@
             mo = [results firstObject];
         }];
         if (!mo) {
-            mo = [[CoreDataStore instance] createEntityWithClassName:NSStringFromClass([obj CDCompanionClass])
-                                                attributesDictionary:[obj dictionaryWithoutCDRelationships]
-                                              inManagedObjectContext:bmoc];
+            mo = [[LocalServices instance].coreDataStack createEntityWithClassName:NSStringFromClass([obj CDCompanionClass])
+                                                              attributesDictionary:[obj dictionaryWithoutCDRelationships]
+                                                            inManagedObjectContext:bmoc];
             
             // Do the same for each relationship recursivly
             for (NSString *relationship in [obj CDCompanionClassRelationshipPropertyNames]) {
@@ -127,7 +101,9 @@
             [attributes enumerateObjectsUsingBlock:^(NSString *attrKey, NSUInteger idx, BOOL *stop) {
                 NSObject *valueForKey = [obj valueForKey:attrKey];
                 if ([valueForKey isValidObject]) {
-                    [mo setValue:valueForKey forKey:attrKey];
+                    [bmoc performBlock:^{
+                        [mo setValue:valueForKey forKey:attrKey];
+                    }];
                 }
             }];
             
@@ -152,7 +128,7 @@
         }
     }];
     
-    [[CoreDataStore instance] saveDataIntoContext:bmoc usingBlock:^(BOOL saved, NSError *error) {
+    [[LocalServices instance].coreDataStack saveDataIntoContext:bmoc usingBlock:^(BOOL saved, NSError *error) {
         if (savedBlock) {
             savedBlock(saved, error);
         }

@@ -8,7 +8,7 @@
 
 #import "PostsDataSourceManager.h"
 #import "PostCD.h"
-#import "NSManagedObject+CoreDataStack.h"
+#import "NSManagedObject+IRCoreDataStack.h"
 
 @interface PostsDataSourceManager () <NSFetchedResultsControllerDelegate>
 

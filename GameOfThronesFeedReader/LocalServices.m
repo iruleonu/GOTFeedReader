@@ -7,8 +7,14 @@
 //
 
 #import "LocalServices.h"
-#import "CoreDataStore.h"
 #import "EntityProvider.h"
+#import "IRCoreDataStack+Operations.h"
+
+@interface LocalServices ()
+
+@property (nonatomic, strong, readwrite) IRCoreDataStack *coreDataStack;
+
+@end
 
 @implementation LocalServices
 
@@ -45,16 +51,18 @@ static LocalServices *instance = nil;
 #pragma mark - Private
 
 - (void)setupLocalServices {
-    [CoreDataStore instance];
-    [EntityProvider instance].managedObjectContext = [CoreDataStore instance].managedObjectContext;
-    [EntityProvider instance].backgroundManagedObjectContext = [CoreDataStore instance].backgroundManagedObjectContext;
+    self.coreDataStack = [[IRCoreDataStack alloc] initWithType:@"NSSQLiteStoreType"
+                                                 modelFilename:@"GameOfThronesFeedReader"
+                                                      inBundle:[NSBundle mainBundle]];
+    [EntityProvider instance].managedObjectContext = self.coreDataStack.managedObjectContext;
+    [EntityProvider instance].backgroundManagedObjectContext = self.coreDataStack.backgroundManagedObjectContext;
 }
 
 #pragma mark - Custom
 
-- (void)deleteAllEntities:(NSString *)nameEntity withCompletionBlock:(CoreDataStoreSaveCompletion)savedBlock
+- (void)deleteAllEntities:(NSString *)nameEntity withCompletionBlock:(IRCoreDataStackSaveCompletion)savedBlock
 {
-    NSManagedObjectContext *moc = [CoreDataStore instance].managedObjectContext;
+    NSManagedObjectContext *moc = self.coreDataStack.managedObjectContext;
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:nameEntity];
     [fetchRequest setIncludesPropertyValues:NO]; //only fetch the managedObjectID
@@ -66,7 +74,7 @@ static LocalServices *instance = nil;
     }
     
     // Despite this method is called save, actually, from the previous operations, is going to delete the objects
-    [[CoreDataStore instance] saveDataIntoContext:moc usingBlock:^(BOOL saved, NSError *error) {
+    [self.coreDataStack saveDataIntoContext:moc usingBlock:^(BOOL saved, NSError *error) {
         if (saved && savedBlock) {
             savedBlock(saved, error);
         }
