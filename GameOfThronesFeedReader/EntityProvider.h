@@ -15,7 +15,7 @@
 + (EntityProvider *)instance;
 
 - (instancetype)init NS_DESIGNATED_INITIALIZER NS_UNAVAILABLE;
-- (instancetype)initWithDataProvider:(id)dataProvider NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithDataProvider:(IRCoreDataStack *)dataProvider NS_DESIGNATED_INITIALIZER;
 
 - (void)fetchAllPostsWithCompletionBlock:(IRCoreDataStackFetchCompletionBlock)completionBlock;
 - (void)fetchPostWithManagedObjectID:(id)objectId withCompletionBlock:(IRCoreDataStackFetchCompletionBlock)completionBlock;

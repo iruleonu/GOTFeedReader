@@ -186,8 +186,6 @@
 			children = (
 				404EB9951C814A0500639438 /* AppDelegate */,
 				404EB9911C8149B000639438 /* Common */,
-				404EB9721C8145DB00639438 /* FacadeAPI.h */,
-				404EB9731C8145DB00639438 /* FacadeAPI.m */,
 				404EB9921C8149BC00639438 /* Configuration */,
 				404EB9931C8149C100639438 /* VCs */,
 			);
@@ -339,6 +337,8 @@
 				40CC22991C83D03400707598 /* Protocols */,
 				407D79A11CA8F98E00BACE60 /* Providers */,
 				404EB9571C81453A00639438 /* Views */,
+				404EB9721C8145DB00639438 /* FacadeAPI.h */,
+				404EB9731C8145DB00639438 /* FacadeAPI.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
