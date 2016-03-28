@@ -11,6 +11,8 @@
 #import "PostCD.h"
 #import "PostAuthorMTL.h"
 
+static NSString *const PostMTLFallBackPostAvatar = @"http://api.adorable.io/avatars/285/%posthasnoasset.png/";
+
 @implementation PostMTL
 
 #pragma mark - MTLJSONSerializing
@@ -71,6 +73,13 @@
     }
     
     return [aux mutableCopy];
+}
+
+#pragma mark - Custom
+
+- (NSString *)getPostAvatar {
+    NSString *assetUrl = (self.assetUrl) ? self.assetUrl : PostMTLFallBackPostAvatar;
+    return assetUrl;
 }
 
 @end

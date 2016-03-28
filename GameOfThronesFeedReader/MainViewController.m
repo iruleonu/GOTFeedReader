@@ -10,6 +10,7 @@
 #import "MainViewControllerTableViewCell.h"
 #import "FeedPostDetailedViewController.h"
 #import "PostCD.h"
+#import "PostMTL.h"
 #import "EntityProvider.h"
 #import "FeedDataSource.h"
 #import "PostsDataSourceManager.h"
@@ -74,7 +75,7 @@ static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCe
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MainViewControllerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MainViewControllerCellIdentifier];
     
-    PostCD *post = [self.dataSourceManager modelObjectAtIndexPath:indexPath];
+    PostMTL *post = [self.dataSourceManager modelObjectAtIndexPath:indexPath];
     [cell updateWithPost:post];
     
     return cell;
@@ -85,9 +86,8 @@ static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCe
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    FeedPostDetailedViewController *vc = [[FeedPostDetailedViewController alloc] initWithNibName:NSStringFromClass([FeedPostDetailedViewController class]) bundle:nil];
-    PostCD *post = [self.dataSourceManager modelObjectAtIndexPath:indexPath];
-    vc.postId = post.objectID;
+    PostMTL *post = [self.dataSourceManager modelObjectAtIndexPath:indexPath];
+    FeedPostDetailedViewController *vc = [[FeedPostDetailedViewController alloc] initWithPost:post];
     
     [self.navigationController pushViewController:vc animated:YES];
 }

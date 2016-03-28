@@ -27,4 +27,6 @@
 @property (nullable, nonatomic, retain) NSString *fullUrl;
 @property (nullable, nonatomic, retain) NSString *assetUrl;
 
+- (NSString * _Nonnull)getPostAvatar;
+
 @end

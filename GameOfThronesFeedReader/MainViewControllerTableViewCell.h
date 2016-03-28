@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class PostCD;
+@class PostMTL;
 
 @interface MainViewControllerTableViewCell : UITableViewCell
 
-- (void)updateWithPost:(PostCD *)post;
+- (void)updateWithPost:(PostMTL *)post;
 
 @end

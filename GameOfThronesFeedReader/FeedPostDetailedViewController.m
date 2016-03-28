@@ -8,8 +8,7 @@
 
 #import "FeedPostDetailedViewController.h"
 #import "EntityProvider.h"
-#import "PostCD.h"
-#import "PostAuthorCD.h"
+#import "PostMTL.h"
 #import "UIImageView+AFNetworking.h"
 
 static NSString * const FeedPostDetailedViewControllerEmptyPlaceholder = @"placeholder1";
@@ -22,22 +21,29 @@ static NSString * const FeedPostDetailedViewControllerEmptyPlaceholder = @"place
 @property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
 @property (weak, nonatomic) IBOutlet UILabel *tagsLabel;
 
+@property (nonatomic, strong) PostMTL *post;
+
 @end
 
 @implementation FeedPostDetailedViewController
+
+- (instancetype)initWithPost:(PostMTL *)post {
+    if (self = [self initWithNibName:NSStringFromClass([FeedPostDetailedViewController class]) bundle:nil]) {
+        self.post = post;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    [self updateWithPost:self.post];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    [[EntityProvider instance] fetchPostWithManagedObjectID:self.postId withCompletionBlock:^(NSArray *results) {
-        [self updateWithPost:[results firstObject]];
-    }];
 }
 
 #pragma mark - Setup
@@ -52,7 +58,7 @@ static NSString * const FeedPostDetailedViewControllerEmptyPlaceholder = @"place
     self.activityIndicatorView.alpha = 0.0f;
 }
 
-- (void)updateWithPost:(PostCD *)post {
+- (void)updateWithPost:(PostMTL *)post {
     if (post) {
         self.titleLabel.text = [post title];
         self.bodyTextView.text = [[[post body] stringByStrippingHTML] trim];

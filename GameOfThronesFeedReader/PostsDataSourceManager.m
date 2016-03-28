@@ -8,6 +8,7 @@
 
 #import "PostsDataSourceManager.h"
 #import "PostCD.h"
+#import "PostMTL.h"
 #import "NSManagedObject+IRCoreDataStack.h"
 
 @interface PostsDataSourceManager () <NSFetchedResultsControllerDelegate>
@@ -53,7 +54,18 @@
 }
 
 - (id)modelObjectAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.fetchedResultsController objectAtIndexPath:indexPath];
+    PostMTL *postMTL;
+    PostCD *postCD = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    NSArray *keys = postCD.entity.attributesByName.allKeys;
+    NSDictionary *dict = [postCD dictionaryWithValuesForKeys:keys];
+    NSError *parseError;
+    
+    postMTL = [MTLJSONAdapter modelOfClass:[PostMTL class]
+                        fromJSONDictionary:dict
+                                     error:&parseError];
+    
+    return postMTL;
 }
 
 #pragma mark - NSFetchedResultsControllerProtocol

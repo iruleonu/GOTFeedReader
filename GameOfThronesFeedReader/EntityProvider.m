@@ -24,8 +24,7 @@
 
 #pragma mark - initializer
 
-+ (EntityProvider *)instance
-{
++ (EntityProvider *)instance {
     return [FacadeAPI sharedInstance].entityProvider;
 }
 
@@ -46,8 +45,9 @@
     NSArray *aux;
     NSError *error;
     
-    NSManagedObject *mo = [self.coreDataStack.managedObjectContext existingObjectWithID:objectId error:&error];
-    aux = (mo) ? @[mo] : @[];
+    NSManagedObject *mo = [objectId isValidObject] ? [self.coreDataStack.managedObjectContext existingObjectWithID:objectId error:&error] : nil;
+    
+    aux = (mo && !error) ? @[mo] : @[];
     
     if (completionBlock) {
         completionBlock(aux);

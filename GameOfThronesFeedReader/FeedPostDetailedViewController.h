@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class PostMTL;
+
 @interface FeedPostDetailedViewController : UIViewController
 
-@property (nonatomic) id postId; // NSManagedObjectID
+- (instancetype)initWithPost:(PostMTL *)post;
 
 @end

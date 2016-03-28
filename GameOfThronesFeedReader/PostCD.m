@@ -11,7 +11,6 @@
 
 static NSString *const PostCDFallBackPostAvatar = @"http://api.adorable.io/avatars/285/%posthasnoasset.png/";
 
-
 @implementation PostCD
 
 // Insert code here to add functionality to your managed object subclass

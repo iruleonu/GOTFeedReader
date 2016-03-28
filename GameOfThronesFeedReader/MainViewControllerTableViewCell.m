@@ -8,8 +8,7 @@
 
 #import "MainViewControllerTableViewCell.h"
 #import "FeedPagedResultsMTL.h"
-#import "PostCD.h"
-#import "PostAuthorCD.h"
+#import "PostMTL.h"
 #import "UIImageView+AFNetworking.h"
 
 static NSString * const MainViewControllerTableViewCellEmptyPlaceholder = @"placeholder1";
@@ -51,7 +50,7 @@ static NSString * const MainViewControllerTableViewCellEmptyPlaceholder = @"plac
     self.activityIndicatorView.alpha = 0.0f;
 }
 
-- (void)updateWithPost:(PostCD *)post {
+- (void)updateWithPost:(PostMTL *)post {
     self.firstNameLabel.text = [post title];
     self.lastNameLabel.text = [[post excerpt] stringByStrippingHTML];
     
@@ -60,7 +59,6 @@ static NSString * const MainViewControllerTableViewCellEmptyPlaceholder = @"plac
     
     // Do the request using AFNetworking category on top of the UIImageView
     NSString *avatarImage = [post getPostAvatar];
-    
     
     [self.avatarImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:avatarImage]]
                               placeholderImage:[UIImage imageNamed:MainViewControllerTableViewCellEmptyPlaceholder]
