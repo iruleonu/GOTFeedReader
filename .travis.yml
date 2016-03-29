@@ -1,7 +1,7 @@
 language: objective-c
 osx_image: xcode7.3
 before_install:
-  - gem install slather:2.0.0 # 2.0.1 has the bug no product binary found
+  - gem install xcpretty-travis-formatter
   - xcrun simctl list
 install: 
   - echo "<3"
@@ -14,7 +14,7 @@ before_script:
 script: 
  - ./build.sh $MODE
 after_success:
-  - slather
+  - echo "<3"
 
 # whitelist
 branches:

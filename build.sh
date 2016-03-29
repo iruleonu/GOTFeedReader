@@ -18,14 +18,12 @@ MODE="$1"
 if [ "$MODE" = "tests" ]; then
     echo "Building & testing GameOfThronesFeedReader."
     pod install
-    xctool/xctool.sh \
+    xcodebuild \
         -workspace GameOfThronesFeedReader.xcworkspace \
         -scheme GameOfThronesFeedReader \
         -sdk "$SDK" \
         -destination "$PLATFORM" \
-        build test
-    trap - EXIT
-    exit 0
+        test | xcpretty -f "xcpretty-travis-formatter" && exit ${PIPESTATUS[0]}
 fi
 
 if [ "$MODE" = "build" ]; then
