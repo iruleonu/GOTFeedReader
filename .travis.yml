@@ -1,11 +1,11 @@
 language: objective-c
 osx_image: xcode7.3
 before_install:
-  - brew uninstall xctool && brew install --HEAD xctool # to fix xctool issue since Xcode 7.3
   - gem install slather
   - xcrun simctl list
 install: 
   - echo "<3"
+  - git clone https://github.com/facebook/xctool.git
 env:
   - MODE=tests
   - MODE=build
