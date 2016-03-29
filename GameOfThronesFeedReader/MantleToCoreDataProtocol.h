@@ -10,9 +10,11 @@
 
 @protocol MantleToCoreDataProtocol <NSObject>
 
-- (NSString * _Nonnull)uuid;
+// Convenience 
++ (instancetype _Nullable)mantleObjectFromCDObject:(NSManagedObject * _Nullable)cdObject error:(NSError * _Nullable)error;
 
 // Name of the CD entity that the class is going to represent
++ (Class _Nonnull)CDCompanionClass;
 - (Class _Nonnull)CDCompanionClass;
 
 // Name of the properties that are represented has another CD companion class
@@ -23,5 +25,8 @@
 
 // Dictionary representation of the relationships
 - (NSDictionary * _Nullable)dictionaryForCDRelationshipPropertyNamed:(NSString * _Nonnull)property;
+
+// Object id (not NSManagedObjectID)
+- (NSString * _Nonnull)uuid;
 
 @end

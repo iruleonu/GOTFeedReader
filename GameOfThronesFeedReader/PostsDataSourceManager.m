@@ -54,17 +54,9 @@
 }
 
 - (id)modelObjectAtIndexPath:(NSIndexPath *)indexPath {
-    PostMTL *postMTL;
     PostCD *postCD = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    NSArray *keys = postCD.entity.attributesByName.allKeys;
-    NSDictionary *dict = [postCD dictionaryWithValuesForKeys:keys];
     NSError *parseError;
-    
-    postMTL = [MTLJSONAdapter modelOfClass:[PostMTL class]
-                        fromJSONDictionary:dict
-                                     error:&parseError];
-    
+    PostMTL *postMTL = [PostMTL mantleObjectFromCDObject:postCD error:parseError];
     return postMTL;
 }
 

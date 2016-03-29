@@ -31,6 +31,24 @@ static NSString *const PostMTLFallBackPostAvatar = @"http://api.adorable.io/avat
 
 #pragma mark - MantleToCoreDataProtocol
 
++ (instancetype _Nullable)mantleObjectFromCDObject:(NSManagedObject * _Nullable)cdObject error:(NSError * _Nullable)error {
+    if (![cdObject isKindOfClass:[self CDCompanionClass]]) {
+        return nil;
+    }
+    
+    NSArray *keys = cdObject.entity.attributesByName.allKeys;
+    NSDictionary *dict = [cdObject dictionaryWithValuesForKeys:keys];
+    NSError *parseError;
+    
+    return [MTLJSONAdapter modelOfClass:[self class]
+                     fromJSONDictionary:dict
+                                  error:&parseError];
+}
+
++ (Class)CDCompanionClass {
+    return [PostCD class];
+}
+
 - (Class)CDCompanionClass {
     return [PostCD class];
 }
