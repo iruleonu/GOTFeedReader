@@ -1,15 +1,12 @@
 language: objective-c
 osx_image: xcode7.3
 before_install:
-  - brew update
-  - brew reinstall xctool
-  - brew reinstall carthage
-  - rvm use system
-  - sudo gem install cocoapods -v 0.39.0
-  - sudo gem install xcodeproj -v 0.28.2
-  - sudo gem install slather
+  - gem install slather
   - xcrun simctl list
-install: echo "<3"
+install: 
+  - echo "<3"
+  - carthage bootstrap --no-use-binaries
+  - git clone https://github.com/facebook/xctool.git
 env:
   - MODE=tests
   - MODE=build

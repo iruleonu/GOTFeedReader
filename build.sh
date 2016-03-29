@@ -18,7 +18,7 @@ MODE="$1"
 if [ "$MODE" = "tests" ]; then
     echo "Building & testing GameOfThronesFeedReader."
     pod install
-    xctool \
+    xctool/xctool.sh \
         -workspace GameOfThronesFeedReader.xcworkspace \
         -scheme GameOfThronesFeedReader \
         -sdk "$SDK" \
@@ -31,7 +31,7 @@ fi
 if [ "$MODE" = "build" ]; then
     echo "Building GameOfThronesFeedReader."
     pod install
-    xctool \
+    xctool/xctool.sh \
         -workspace GameOfThronesFeedReader.xcworkspace \
         -scheme GameOfThronesFeedReader \
         -sdk "$SDK" \
