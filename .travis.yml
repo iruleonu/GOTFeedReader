@@ -5,9 +5,9 @@ before_install:
   - brew reinstall xctool
   - brew reinstall carthage
   - rvm use system
-  - gem install cocoapods -v 0.39.0
-  - gem install xcodeproj -v 0.28.2
-  - gem install slather
+  - sudo gem install cocoapods -v 0.39.0
+  - sudo gem install xcodeproj -v 0.28.2
+  - sudo gem install slather
   - xcrun simctl list
 install: echo "<3"
 env:
