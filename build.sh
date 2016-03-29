@@ -23,7 +23,9 @@ if [ "$MODE" = "tests" ]; then
         -scheme GameOfThronesFeedReader \
         -sdk "$SDK" \
         -destination "$PLATFORM" \
-        test | xcpretty -f "xcpretty-travis-formatter" && exit ${PIPESTATUS[0]}
+        test | xcpretty
+    trap - EXIT
+    exit 0
 fi
 
 if [ "$MODE" = "build" ]; then

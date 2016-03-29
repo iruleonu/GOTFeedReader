@@ -1,7 +1,7 @@
 language: objective-c
 osx_image: xcode7.3
 before_install:
-  - gem install xcpretty-travis-formatter
+  - gem install xcpretty
   - xcrun simctl list
 install: 
   - echo "<3"
