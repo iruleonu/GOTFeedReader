@@ -59,22 +59,13 @@ static FacadeAPI *instance = nil;
 
 #pragma mark - Custom
 
-- (void)deleteAllEntities:(NSString *)nameEntity withCompletionBlock:(IRCoreDataStackSaveCompletion)savedBlock
-{
-    NSManagedObjectContext *moc = self.coreDataStack.managedObjectContext;
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:nameEntity];
-    [fetchRequest setIncludesPropertyValues:NO]; //only fetch the managedObjectID
-    
-    NSError *error;
-    NSArray *fetchedObjects = [moc executeFetchRequest:fetchRequest error:&error];
-    for (NSManagedObject *object in fetchedObjects) {
-        [moc deleteObject:object];
-    }
+- (void)deleteAllEntities:(NSString *)nameEntity withCompletionBlock:(IRCoreDataStackSaveCompletion)savedBlock {
+    NSManagedObjectContext *bmoc = self.coreDataStack.backgroundManagedObjectContext;
+    [self.coreDataStack deleteAllFromEntity:nameEntity];
     
     // Despite this method is called save, actually, from the previous operations, is going to delete the objects
-    [self.coreDataStack saveDataIntoContext:moc usingBlock:^(BOOL saved, NSError *error) {
-        if (saved && savedBlock) {
+    [self.coreDataStack saveIntoContext:bmoc usingBlock:^(BOOL saved, NSError *error) {
+        if (savedBlock) {
             savedBlock(saved, error);
         }
     }];

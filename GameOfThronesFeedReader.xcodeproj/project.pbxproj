@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CDECCD4C37EC4415BD17DB3 /* Pods_GameOfThronesFeedReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AF0B2D4E63BB76E8E64482 /* Pods_GameOfThronesFeedReader.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1CDECCD4C37EC4415BD17DB3 /* Pods_GameOfThronesFeedReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AF0B2D4E63BB76E8E64482 /* Pods_GameOfThronesFeedReader.framework */; };
 		404EB92F1C81434400639438 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB92E1C81434400639438 /* main.m */; };
 		404EB9321C81434400639438 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9311C81434400639438 /* AppDelegate.m */; };
 		404EB9381C81434400639438 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404EB9361C81434400639438 /* Main.storyboard */; };
@@ -43,6 +43,7 @@
 		404EB9DB1C8165A400639438 /* PostCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D91C8165A400639438 /* PostCD.m */; };
 		407D79991CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 407D79981CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m */; };
 		40CC229D1C84029A00707598 /* PostsDataSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CC229C1C84029A00707598 /* PostsDataSourceManager.m */; };
+		F590295FA904919B52A724DD /* Pods_GameOfThronesFeedReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B49C0D53DAA5BA7A03CA64 /* Pods_GameOfThronesFeedReaderTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,9 @@
 		4E23D26CB45A57561ABB7372 /* Pods-GameOfThronesFeedReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfThronesFeedReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameOfThronesFeedReader/Pods-GameOfThronesFeedReader.debug.xcconfig"; sourceTree = "<group>"; };
 		50AF0B2D4E63BB76E8E64482 /* Pods_GameOfThronesFeedReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOfThronesFeedReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		553117E3E824754EE6F1F39B /* Pods-GameOfThronesFeedReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfThronesFeedReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameOfThronesFeedReader/Pods-GameOfThronesFeedReader.release.xcconfig"; sourceTree = "<group>"; };
+		88B49C0D53DAA5BA7A03CA64 /* Pods_GameOfThronesFeedReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOfThronesFeedReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		927F05C5BDB2537DD8F9A050 /* Pods-GameOfThronesFeedReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfThronesFeedReaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameOfThronesFeedReaderTests/Pods-GameOfThronesFeedReaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		C8BF06873B92BCAFD4B159F6 /* Pods-GameOfThronesFeedReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfThronesFeedReaderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameOfThronesFeedReaderTests/Pods-GameOfThronesFeedReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F590295FA904919B52A724DD /* Pods_GameOfThronesFeedReaderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				50AF0B2D4E63BB76E8E64482 /* Pods_GameOfThronesFeedReader.framework */,
+				88B49C0D53DAA5BA7A03CA64 /* Pods_GameOfThronesFeedReaderTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -443,6 +449,8 @@
 			children = (
 				4E23D26CB45A57561ABB7372 /* Pods-GameOfThronesFeedReader.debug.xcconfig */,
 				553117E3E824754EE6F1F39B /* Pods-GameOfThronesFeedReader.release.xcconfig */,
+				C8BF06873B92BCAFD4B159F6 /* Pods-GameOfThronesFeedReaderTests.debug.xcconfig */,
+				927F05C5BDB2537DD8F9A050 /* Pods-GameOfThronesFeedReaderTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -474,9 +482,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 404EB94F1C81434400639438 /* Build configuration list for PBXNativeTarget "GameOfThronesFeedReaderTests" */;
 			buildPhases = (
+				2D8F53E45F863FD59403E68D /* Check Pods Manifest.lock */,
 				404EB93F1C81434400639438 /* Sources */,
 				404EB9401C81434400639438 /* Frameworks */,
 				404EB9411C81434400639438 /* Resources */,
+				CA01B4F695FB2DED6A83F359 /* Embed Pods Frameworks */,
+				E9ECD975773B386BD15D620B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -562,6 +573,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		2D8F53E45F863FD59403E68D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		3A454DC5539F03983087B240 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -590,6 +616,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameOfThronesFeedReader/Pods-GameOfThronesFeedReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA01B4F695FB2DED6A83F359 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameOfThronesFeedReaderTests/Pods-GameOfThronesFeedReaderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9ECD975773B386BD15D620B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameOfThronesFeedReaderTests/Pods-GameOfThronesFeedReaderTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -792,6 +848,7 @@
 		};
 		404EB9501C81434400639438 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8BF06873B92BCAFD4B159F6 /* Pods-GameOfThronesFeedReaderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GameOfThronesFeedReaderTests/Info.plist;
@@ -804,6 +861,7 @@
 		};
 		404EB9511C81434400639438 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 927F05C5BDB2537DD8F9A050 /* Pods-GameOfThronesFeedReaderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GameOfThronesFeedReaderTests/Info.plist;

@@ -95,7 +95,7 @@
             [attributes enumerateObjectsUsingBlock:^(NSString *attrKey, NSUInteger idx, BOOL *stop) {
                 NSObject *valueForKey = [obj valueForKey:attrKey];
                 if ([valueForKey isValidObject]) {
-                    [bmoc performBlock:^{
+                    [bmoc performBlockAndWait:^{
                         [mo setValue:valueForKey forKey:attrKey];
                     }];
                 }
@@ -122,7 +122,7 @@
         }
     }];
     
-    [self.coreDataStack saveDataIntoContext:bmoc usingBlock:^(BOOL saved, NSError *error) {
+    [self.coreDataStack saveIntoContext:bmoc usingBlock:^(BOOL saved, NSError *error) {
         if (savedBlock) {
             savedBlock(saved, error);
         }
