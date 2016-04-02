@@ -1,6 +1,6 @@
 //
 //  ContactsDataSource+Web.h
-//  babylonhealth
+//  GameOfThronesFeedReader
 //
 //  Created by Nuno Salvador on 10/02/2016.
 //  Copyright © 2016 Nuno Salvador. All rights reserved.
