@@ -7,29 +7,35 @@
 //
 
 #import "FeedDataSourceManager.h"
+#import "IRCoreDataStack.h"
 #import "PostCD.h"
 #import "PostMTL.h"
 #import "NSManagedObject+IRCoreDataStack.h"
+#import "IRCoreDataStack+NSFecthedResultsController.h"
 
 @interface FeedDataSourceManager () <NSFetchedResultsControllerDelegate>
 
+@property (nonatomic, strong) IRCoreDataStack *coreDataStore;
 @property (nonatomic, weak) id <FeedDataSourceManagerDelegate> delegate;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
 @implementation FeedDataSourceManager
 
-- (instancetype)initWithDelegate:(id<FeedDataSourceManagerDelegate>)delegate {
+- (instancetype)initWithDataStore:(IRCoreDataStack *)dataStore delegate:(id<FeedDataSourceManagerDelegate>)delegate; {
     if (self = [super init]) {
+        self.coreDataStore = dataStore;
         self.delegate = delegate;
-        self.fetchedResultsController = [PostCD fetchAllSortedBy:@[@"uuid"]
-                                                       ascending:YES
-                                                       predicate:nil
-                                                      fetchLimit:0
-                                                  fetchBatchSize:10
-                                                         groupBy:nil
-                                                        delegate:self];
+        
+        NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"uuid" ascending:YES];
+        self.fetchedResultsController = [self.coreDataStore controllerWithEntitiesName:NSStringFromClass([PostCD class])
+                                                                             predicate:nil
+                                                                       sortDescriptors:@[sortDescriptor]
+                                                                             batchSize:10
+                                                                    sectionNameKeyPath:nil
+                                                                             cacheName:nil]; // NSStringFromClass([self class])
+        self.fetchedResultsController.delegate = self;
         
         NSError *error;
         [self.fetchedResultsController performFetch:&error];

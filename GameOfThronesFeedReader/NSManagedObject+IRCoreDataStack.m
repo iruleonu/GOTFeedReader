@@ -12,6 +12,19 @@
 
 @implementation NSManagedObject (IRCoreDataStack)
 
++ (instancetype)createEntity {
+    NSManagedObjectContext *moc = [FacadeAPI sharedInstance].coreDataStack.managedObjectContext;
+    return [self createEntityInManagedObjectContext:moc];
+}
+
++ (instancetype)createEntityInManagedObjectContext:(NSManagedObjectContext *)context {
+    NSManagedObjectContext *moc = (context == nil) ? [FacadeAPI sharedInstance].coreDataStack.managedObjectContext : context;
+    NSManagedObject *entity = [[FacadeAPI sharedInstance].coreDataStack createEntityWithClassName:NSStringFromClass([self class])
+                                                                             attributesDictionary:nil
+                                                                           inManagedObjectContext:moc];
+    return entity;
+}
+
 + (void)fetchWithUUID:(NSString *)uuid completionBlock:(IRCoreDataStackFetchCompletionBlock)completionBlock {
     [self fetchWithUUID:uuid inManagedObjectContext:nil completionBlock:completionBlock];
 }

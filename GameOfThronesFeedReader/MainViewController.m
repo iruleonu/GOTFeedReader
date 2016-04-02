@@ -32,7 +32,8 @@ static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCe
     
     self.feedDataSource = [[FeedDataSource alloc] initWithApiClient:[FacadeAPI sharedInstance].apiClient
                                                           dataStore:[FacadeAPI sharedInstance].coreDataStack];
-    self.dataSourceManager = [[FeedDataSourceManager alloc] initWithDelegate:self];
+    self.dataSourceManager = [[FeedDataSourceManager alloc] initWithDataStore:[FacadeAPI sharedInstance].coreDataStack
+                                                                     delegate:self];
     
     [self setupUI];
     

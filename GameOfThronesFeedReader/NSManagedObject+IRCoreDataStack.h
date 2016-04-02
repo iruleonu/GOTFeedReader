@@ -12,6 +12,8 @@
 
 @interface NSManagedObject (IRCoreDataStack)
 
++ (instancetype)createEntity;
++ (instancetype)createEntityInManagedObjectContext:(NSManagedObjectContext *)context;
 + (void)fetchWithUUID:(NSString *)uuid completionBlock:(IRCoreDataStackFetchCompletionBlock)completionBlock;
 + (void)fetchWithUUID:(NSString *)uuid inManagedObjectContext:(NSManagedObjectContext *)context completionBlock:(IRCoreDataStackFetchCompletionBlock)completionBlock;
 + (void)fetchWithUUID:(NSString *)uuid inManagedObjectContext:(NSManagedObjectContext *)context asynchronous:(BOOL)asynchronous completionBlock:(IRCoreDataStackFetchCompletionBlock)completionBlock;

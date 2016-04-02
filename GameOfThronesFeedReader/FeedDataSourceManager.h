@@ -22,7 +22,7 @@
 
 @interface FeedDataSourceManager : NSObject
 
-- (instancetype)initWithDelegate:(id<FeedDataSourceManagerDelegate>)delegate;
+- (instancetype)initWithDataStore:(IRCoreDataStack *)dataStore delegate:(id<FeedDataSourceManagerDelegate>)delegate;
 
 - (NSInteger)numberOfSections;
 - (NSUInteger)numberOfRowsInSection:(NSInteger)section;
