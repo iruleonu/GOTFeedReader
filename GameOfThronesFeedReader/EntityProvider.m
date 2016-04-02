@@ -85,7 +85,9 @@
                                              entityName:NSStringFromClass([mantleProperty CDCompanionClass])
                                         completionBlock:^(NSArray *results) {
                                             NSManagedObject *moRelationship = [results firstObject];
-                                            [mo setValue:moRelationship forKey:relationship];
+                                            [bmoc performBlockAndWait:^{
+                                                [mo setValue:moRelationship forKey:relationship];
+                                            }];
                     }];
                 }];
             }
@@ -115,7 +117,9 @@
                                              entityName:NSStringFromClass([mantleProperty CDCompanionClass])
                                         completionBlock:^(NSArray *results) {
                                             NSManagedObject *moRelationship = [results firstObject];
-                                            [mo setValue:moRelationship forKey:relationship];
+                                            [bmoc performBlockAndWait:^{
+                                                [mo setValue:moRelationship forKey:relationship];
+                                            }];
                                         }];
                 }];
             }
