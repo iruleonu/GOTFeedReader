@@ -8,10 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
+@class ApiClient, IRCoreDataStack;
+
 typedef void(^FeedDataSourceCompletion)(NSArray *products, NSError *error);
 
+/**
+ *  Ideally, this class would return the refreshed feed based on the current post ids that we already have on
+ *  our cache (dataStore). We pass the ids to the server with the latest updated timestamp, and we get only
+ *  the new and updated feed posts.
+ */
 @interface FeedDataSource : NSObject
 
-+ (void)feedWithCompletionBlock:(FeedDataSourceCompletion)completionBlock;
+/**
+ *  Init method
+ *
+ *  @param apiClient Network client for the network request
+ *  @param dataStore Local data manager
+ */
+- (instancetype)initWithApiClient:(ApiClient *)apiClient dataStore:(IRCoreDataStack *)dataStore;
+
+- (void)feedWithCompletionBlock:(FeedDataSourceCompletion)completionBlock;
 
 @end

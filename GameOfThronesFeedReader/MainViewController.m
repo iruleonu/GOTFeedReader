@@ -7,22 +7,21 @@
 //
 
 #import "MainViewController.h"
-#import "MainViewControllerTableViewCell.h"
-#import "FeedPostDetailedViewController.h"
-#import "PostCD.h"
-#import "PostMTL.h"
-#import "EntityProvider.h"
 #import "FeedDataSource.h"
-#import "PostsDataSourceManager.h"
+#import "FeedDataSourceManager.h"
+#import "MainViewControllerTableViewCell.h"
+#import "PostMTL.h"
+#import "FeedPostDetailedViewController.h"
 
 static NSString *const MainViewControllerTitle = @"GOT News Reader";
 static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCellIdentifier";
 
-@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, PostsDataSourceManagerDelegate>
+@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, FeedDataSourceManagerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (nonatomic, strong) PostsDataSourceManager *dataSourceManager;
+@property (nonatomic, strong) FeedDataSource *feedDataSource;
+@property (nonatomic, strong) FeedDataSourceManager *dataSourceManager;
 
 @end
 
@@ -31,7 +30,9 @@ static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCe
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dataSourceManager = [[PostsDataSourceManager alloc] initWithDelegate:self];
+    self.feedDataSource = [[FeedDataSource alloc] initWithApiClient:[FacadeAPI sharedInstance].apiClient
+                                                          dataStore:[FacadeAPI sharedInstance].coreDataStack];
+    self.dataSourceManager = [[FeedDataSourceManager alloc] initWithDelegate:self];
     
     [self setupUI];
     
@@ -55,12 +56,13 @@ static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCe
 
 - (void)fetchFeed {
     __unsafe_unretained typeof(self) weakSelf = self;
-    [FeedDataSource feedWithCompletionBlock:^(NSArray *items, NSError *error) {
+    
+    [self.feedDataSource feedWithCompletionBlock:^(NSArray *items, NSError *error) {
         MainViewController *strongSelf = weakSelf;
         if (strongSelf) {
             // Save or update to core data
             [[EntityProvider instance] persistEntityFromPostMTLArray:items withSaveCompletionBlock:^(BOOL saved, NSError *error) {
-                [self.refreshControl endRefreshing];
+                [strongSelf.refreshControl endRefreshing];
             }];
         }
     }];
@@ -92,7 +94,7 @@ static NSString *const MainViewControllerCellIdentifier = @"MainViewControllerCe
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-#pragma mark - PostsDataSourceManagerDelegate
+#pragma mark - FeedDataSourceManagerDelegate
 
 - (void)managerInsertSectionIndex:(NSUInteger)sectionIndex {
     [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];

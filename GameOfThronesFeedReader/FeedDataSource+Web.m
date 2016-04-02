@@ -12,16 +12,24 @@
 
 @implementation FeedDataSource (Web)
 
-+ (void)feedFromWebWithCompletionBlock:(FeedDataSourceCompletion)completionBlock {
-    [[ApiClient instance] fetchFeedWithPageNumber:0
-                                       parameters:nil
-                                       beforeLoad:nil
-                                        afterLoad:nil
-                                        onSuccess:^(id _Nullable response) {
-                                            [FeedDataSource parseFeedData:response withCompletion:completionBlock];
-                                        } onError:^(NSError * _Nonnull error) {
-                                            completionBlock(nil, error);
-                                        }];
++ (void)feedFromWebWithApiClient:(ApiClient * _Nonnull)apiClient
+                excludingPostIds:(NSArray<NSString *> * _Nullable)excludingIds
+            lastUpdatedTimestamp:(NSString * _Nullable)timestmap
+                      pageNumber:(NSInteger)pageNumber
+                 completionBlock:(FeedDataSourceCompletion _Nonnull)completionBlock {
+    // Build dictionary with parameters to send to the server.
+    // This should be a mantle object after calling dictionaryValue
+    NSDictionary *parameters = nil;
+    
+    [apiClient fetchFeedWithPageNumber:0
+                            parameters:parameters
+                            beforeLoad:nil
+                             afterLoad:nil
+                             onSuccess:^(id _Nullable response) {
+                                 [FeedDataSource parseFeedData:response withCompletion:completionBlock];
+                             } onError:^(NSError * _Nonnull error) {
+                                 completionBlock(nil, error);
+                             }];
 }
 
 @end

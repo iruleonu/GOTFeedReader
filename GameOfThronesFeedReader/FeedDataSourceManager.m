@@ -6,21 +6,21 @@
 //  Copyright © 2016 Nuno Salvador. All rights reserved.
 //
 
-#import "PostsDataSourceManager.h"
+#import "FeedDataSourceManager.h"
 #import "PostCD.h"
 #import "PostMTL.h"
 #import "NSManagedObject+IRCoreDataStack.h"
 
-@interface PostsDataSourceManager () <NSFetchedResultsControllerDelegate>
+@interface FeedDataSourceManager () <NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, weak) id <PostsDataSourceManagerDelegate> delegate;
+@property (nonatomic, weak) id <FeedDataSourceManagerDelegate> delegate;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
-@implementation PostsDataSourceManager
+@implementation FeedDataSourceManager
 
-- (instancetype)initWithDelegate:(id<PostsDataSourceManagerDelegate>)delegate {
+- (instancetype)initWithDelegate:(id<FeedDataSourceManagerDelegate>)delegate {
     if (self = [super init]) {
         self.delegate = delegate;
         self.fetchedResultsController = [PostCD fetchAllSortedBy:@[@"uuid"]

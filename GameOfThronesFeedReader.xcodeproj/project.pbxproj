@@ -42,7 +42,7 @@
 		404EB9DA1C8165A400639438 /* PostCD+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D71C8165A400639438 /* PostCD+CoreDataProperties.m */; };
 		404EB9DB1C8165A400639438 /* PostCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB9D91C8165A400639438 /* PostCD.m */; };
 		407D79991CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 407D79981CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m */; };
-		40CC229D1C84029A00707598 /* PostsDataSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CC229C1C84029A00707598 /* PostsDataSourceManager.m */; };
+		40CC229D1C84029A00707598 /* FeedDataSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CC229C1C84029A00707598 /* FeedDataSourceManager.m */; };
 		F590295FA904919B52A724DD /* Pods_GameOfThronesFeedReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B49C0D53DAA5BA7A03CA64 /* Pods_GameOfThronesFeedReaderTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,8 +126,8 @@
 		407D79971CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+IRCoreDataStack.h"; sourceTree = "<group>"; };
 		407D79981CA8E21000BACE60 /* NSManagedObject+IRCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+IRCoreDataStack.m"; sourceTree = "<group>"; };
 		40CC229A1C83D06A00707598 /* MantleToCoreDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MantleToCoreDataProtocol.h; sourceTree = "<group>"; };
-		40CC229B1C84029A00707598 /* PostsDataSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsDataSourceManager.h; sourceTree = "<group>"; };
-		40CC229C1C84029A00707598 /* PostsDataSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsDataSourceManager.m; sourceTree = "<group>"; };
+		40CC229B1C84029A00707598 /* FeedDataSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedDataSourceManager.h; sourceTree = "<group>"; };
+		40CC229C1C84029A00707598 /* FeedDataSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedDataSourceManager.m; sourceTree = "<group>"; };
 		4E23D26CB45A57561ABB7372 /* Pods-GameOfThronesFeedReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfThronesFeedReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameOfThronesFeedReader/Pods-GameOfThronesFeedReader.debug.xcconfig"; sourceTree = "<group>"; };
 		50AF0B2D4E63BB76E8E64482 /* Pods_GameOfThronesFeedReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOfThronesFeedReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		553117E3E824754EE6F1F39B /* Pods-GameOfThronesFeedReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfThronesFeedReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameOfThronesFeedReader/Pods-GameOfThronesFeedReader.release.xcconfig"; sourceTree = "<group>"; };
@@ -382,8 +382,8 @@
 				404EB9561C81453400639438 /* DataSources */,
 				404EB9A11C814ECB00639438 /* MainViewController.h */,
 				404EB9A21C814ECB00639438 /* MainViewController.m */,
-				40CC229B1C84029A00707598 /* PostsDataSourceManager.h */,
-				40CC229C1C84029A00707598 /* PostsDataSourceManager.m */,
+				40CC229B1C84029A00707598 /* FeedDataSourceManager.h */,
+				40CC229C1C84029A00707598 /* FeedDataSourceManager.m */,
 			);
 			name = MainVC;
 			sourceTree = "<group>";
@@ -680,7 +680,7 @@
 				404EB9A31C814ECB00639438 /* MainViewController.m in Sources */,
 				404EB9831C81461B00639438 /* NetworkManager.m in Sources */,
 				404EB9AA1C814F9200639438 /* FeedPostDetailedViewController.m in Sources */,
-				40CC229D1C84029A00707598 /* PostsDataSourceManager.m in Sources */,
+				40CC229D1C84029A00707598 /* FeedDataSourceManager.m in Sources */,
 				404EB9C21C81592C00639438 /* PostAuthorMTL.m in Sources */,
 				404EB98A1C81485F00639438 /* FeedPagedResultsMTL.m in Sources */,
 				404EB9821C81461B00639438 /* ApiClient.m in Sources */,

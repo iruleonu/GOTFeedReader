@@ -6,6 +6,11 @@
 //  Copyright © 2016 Nuno Salvador. All rights reserved.
 //
 
+#import "FacadeAPI.h"
+#import "NetworkManager.h"
+#import "ApiClient.h"
+#import "IRCoreDataStack.h"
+#import "EntityProvider.h"
 #import "NSArray+Extensions.h"
 #import "NSObject+Extensions.h"
 #import "NSString+Extensions.h"

@@ -14,7 +14,7 @@
                      parameters:(NSDictionary * _Nullable)parameters
                      beforeLoad:(BeforeLoadBlockType _Nullable)beforeLoad
                       afterLoad:(AfterLoadBlockType _Nullable)afterLoad
-                      onSuccess:(FetchElementsSuccessBlockType _Nullable)onSuccess
+                      onSuccess:(FetchResponseSuccessBlockType _Nullable)onSuccess
                         onError:(ErrorBlockType _Nullable)onError;
 
 @end

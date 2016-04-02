@@ -12,7 +12,7 @@
 typedef void (^ _Nullable SuccessBlockType)(void);
 typedef void (^ _Nullable FetchElementsSuccessBlockType)(NSArray * _Nullable elements);
 typedef void (^ _Nullable FetchElementsPaginatedSuccessBlockType)(NSArray * _Nullable elements, BOOL isLast);
-typedef void (^ _Nullable FetchElementSuccessBlockType)(id _Nullable element);
+typedef void (^ _Nullable FetchResponseSuccessBlockType)(id _Nullable response);
 typedef void (^ _Nullable ErrorBlockType)(NSError * _Nonnull error);
 
 @interface ApiClient : NSObject

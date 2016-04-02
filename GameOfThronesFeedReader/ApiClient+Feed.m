@@ -13,13 +13,13 @@ static NSString * const EndpointFetchFeed = @"http://www.makinggameofthrones.com
 @implementation ApiClient (Feed)
 
 - (void)fetchFeedWithPageNumber:(NSInteger)pageNumber
-                     parameters:(NSDictionary * _Nullable)parameters
+                     parameters:(NSDictionary *)parameters
                      beforeLoad:(BeforeLoadBlockType _Nullable)beforeLoad
                       afterLoad:(AfterLoadBlockType _Nullable)afterLoad
-                      onSuccess:(FetchElementsSuccessBlockType _Nullable)onSuccess
+                      onSuccess:(FetchResponseSuccessBlockType _Nullable)onSuccess
                         onError:(ErrorBlockType _Nullable)onError {
     NSString *url = [NSString stringWithFormat:EndpointFetchFeed, (long)pageNumber];
-
+    
     [self.networkManager requestWithType:HTTP_REQUEST_TYPE_GET
                                      url:url
                               parameters:parameters

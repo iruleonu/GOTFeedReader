@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PostsDataSourceManagerDelegate <NSObject>
+@protocol FeedDataSourceManagerDelegate <NSObject>
 
 - (void)managerInsertSectionIndex:(NSUInteger)sectionIndex;
 - (void)managerDeleteSectionIndex:(NSUInteger)sectionIndex;
@@ -20,9 +20,9 @@
 
 @end
 
-@interface PostsDataSourceManager : NSObject
+@interface FeedDataSourceManager : NSObject
 
-- (instancetype)initWithDelegate:(id<PostsDataSourceManagerDelegate>)delegate;
+- (instancetype)initWithDelegate:(id<FeedDataSourceManagerDelegate>)delegate;
 
 - (NSInteger)numberOfSections;
 - (NSUInteger)numberOfRowsInSection:(NSInteger)section;

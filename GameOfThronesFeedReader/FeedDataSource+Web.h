@@ -10,6 +10,11 @@
 
 @interface FeedDataSource (Web)
 
-+ (void)feedFromWebWithCompletionBlock:(FeedDataSourceCompletion)completionBlock;
++ (void)feedFromWebWithApiClient:(ApiClient * _Nonnull)apiClient
+                 excludingPostIds:(NSArray<NSString *> * _Nullable)excludingIds
+            lastUpdatedTimestamp:(NSString * _Nullable)timestmap
+                      pageNumber:(NSInteger)pageNumber
+                 completionBlock:(FeedDataSourceCompletion _Nonnull)completionBlock;
+
 
 @end
