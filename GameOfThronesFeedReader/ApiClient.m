@@ -8,12 +8,26 @@
 
 #import "ApiClient.h"
 #import <AFNetworking/AFNetworking.h>
+#import "FacadeAPI.h"
 #import "NetworkManager.h"
+
+@interface ApiClient ()
+
+@property (nonatomic, strong, readwrite, nonnull) NetworkManager *networkManager;
+
+@end
 
 @implementation ApiClient
 
-+ (NetworkManager *)networkManager {
-    return [NetworkManager sharedInstance];
++ (instancetype)instance {
+    return [FacadeAPI sharedInstance].apiClient;
+}
+
+- (instancetype)initWithNetworkManager:(NetworkManager *)networkManager {
+    if (self = [super init]) {
+        self.networkManager = networkManager;
+    }
+    return self;
 }
 
 + (NSDictionary *)dictionaryForError:(NSError *)error {

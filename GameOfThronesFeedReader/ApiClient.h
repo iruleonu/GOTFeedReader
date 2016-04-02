@@ -17,6 +17,9 @@ typedef void (^ _Nullable ErrorBlockType)(NSError * _Nonnull error);
 
 @interface ApiClient : NSObject
 
-+ (NetworkManager * _Nonnull)networkManager;
+@property (nonatomic, strong, readonly, nonnull) NetworkManager *networkManager;
+
++ (instancetype _Nullable)instance;
+- (instancetype _Nullable)initWithNetworkManager:(NetworkManager * _Nonnull)networkManager;
 
 @end

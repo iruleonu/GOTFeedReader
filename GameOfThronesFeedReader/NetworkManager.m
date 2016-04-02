@@ -8,8 +8,8 @@
 
 #import "NetworkManager.h"
 #import <AFNetworking/AFNetworking.h>
+#import "FacadeAPI.h"
 #import "AFNetworkActivityIndicatorManager.h"
-#import "Networking.h"
 
 @interface NetworkManager ()
 
@@ -19,19 +19,15 @@
 
 @implementation NetworkManager
 
-+ (instancetype)sharedInstance {
-    static NetworkManager *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[self alloc] init];
-    });
-    return sharedInstance;
++ (instancetype)instance {
+    return [FacadeAPI sharedInstance].networkManager;
 }
 
-- (instancetype)init {
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl {
     if (self = [super init]) {
-        self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL]];
+        self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
         [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+        
         [self setDefaultRequestSerializerContentType];
     }
     

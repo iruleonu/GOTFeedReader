@@ -7,10 +7,15 @@
 //
 
 #import "FacadeAPI.h"
+#import "Networking.h"
+#import "NetworkManager.h"
+#import "ApiClient.h"
 #import "EntityProvider.h"
 
 @interface FacadeAPI ()
 
+@property (nonatomic, strong, readwrite) NetworkManager *networkManager;
+@property (nonatomic, strong, readwrite) ApiClient *apiClient;
 @property (nonatomic, strong, readwrite) IRCoreDataStack *coreDataStack;
 @property (nonatomic, strong, readwrite) EntityProvider *entityProvider;
 
@@ -51,6 +56,11 @@ static FacadeAPI *instance = nil;
 #pragma mark - Private
 
 - (void)setupLocalServices {
+    // Network
+    self.networkManager = [[NetworkManager alloc] initWithBaseUrl:BASE_URL];
+    self.apiClient = [[ApiClient alloc] initWithNetworkManager:self.networkManager];
+    
+    // Core data
     self.coreDataStack = [[IRCoreDataStack alloc] initWithType:NSSQLiteStoreType
                                                  modelFilename:@"GameOfThronesFeedReader"
                                                       inBundle:[NSBundle mainBundle]];

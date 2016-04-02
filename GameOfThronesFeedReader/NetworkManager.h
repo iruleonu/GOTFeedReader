@@ -27,7 +27,9 @@ typedef void (^MTLFailureBlockType)(NSURLSessionDataTask * _Nullable task, NSErr
 
 NS_ASSUME_NONNULL_BEGIN
 
-+ (instancetype)sharedInstance;
++ (instancetype)instance;
+
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl;
 
 - (void)cancelAllOperations;
 

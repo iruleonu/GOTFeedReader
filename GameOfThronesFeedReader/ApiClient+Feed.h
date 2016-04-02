@@ -10,7 +10,7 @@
 
 @interface ApiClient (Feed)
 
-+ (void)fetchFeedWithPageNumber:(NSInteger)pageNumber
+- (void)fetchFeedWithPageNumber:(NSInteger)pageNumber
                      parameters:(NSDictionary * _Nullable)parameters
                      beforeLoad:(BeforeLoadBlockType _Nullable)beforeLoad
                       afterLoad:(AfterLoadBlockType _Nullable)afterLoad

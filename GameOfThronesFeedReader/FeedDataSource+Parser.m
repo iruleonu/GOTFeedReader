@@ -17,7 +17,7 @@
 + (void)parseFeedData:(id)response withCompletion:(FeedDataSourceCompletion)completion {
     NSError *parseError = nil;
     
-    FeedPagedResultsMTL *feedPagedResults = [MTLJSONAdapter modelOfClass:FeedPagedResultsMTL.class
+    FeedPagedResultsMTL *feedPagedResults = [MTLJSONAdapter modelOfClass:[FeedPagedResultsMTL class]
                                                       fromJSONDictionary:response
                                                                    error:&parseError];
     

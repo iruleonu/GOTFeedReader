@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class IRCoreDataStack, EntityProvider;
+@class NetworkManager, ApiClient, IRCoreDataStack, EntityProvider;
 
 @interface FacadeAPI : NSObject
 
+@property (nonatomic, readonly) NetworkManager *networkManager;
+@property (nonatomic, readonly) ApiClient *apiClient;
 @property (nonatomic, strong, readonly) IRCoreDataStack *coreDataStack;
 @property (nonatomic, strong, readonly) EntityProvider *entityProvider;
 

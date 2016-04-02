@@ -13,15 +13,15 @@
 @implementation FeedDataSource (Web)
 
 + (void)feedFromWebWithCompletionBlock:(FeedDataSourceCompletion)completionBlock {
-    [ApiClient fetchFeedWithPageNumber:0
-                        parameters:nil
-                            beforeLoad:nil
-                             afterLoad:nil
-                             onSuccess:^(id _Nullable response) {
-                                 [FeedDataSource parseFeedData:response withCompletion:completionBlock];
-                             } onError:^(NSError * _Nonnull error) {
-                                 completionBlock(nil, error);
-                             }];
+    [[ApiClient instance] fetchFeedWithPageNumber:0
+                                       parameters:nil
+                                       beforeLoad:nil
+                                        afterLoad:nil
+                                        onSuccess:^(id _Nullable response) {
+                                            [FeedDataSource parseFeedData:response withCompletion:completionBlock];
+                                        } onError:^(NSError * _Nonnull error) {
+                                            completionBlock(nil, error);
+                                        }];
 }
 
 @end
